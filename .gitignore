@@ -1,12 +1,10 @@
-# QA / outils de dev — non publiés
-_*.py
-_*.js
-_check.js
-_v11_*.png
-_dash_*.png
-_shot_*.png
+# Fichiers de travail / QA / outils — jamais publiés avec le site
+_*
+thumbs/
 shots/
 .qa-profile/
 .qa11_desktop/
 .qa11_mobile/
 .shots-profile/
+.thumbrender/
+.linktree-automation/
