@@ -1,45 +1,44 @@
 <!DOCTYPE html>
-<!-- StoryVoice — landing storiesvoice.org — direction « Ex Libris » (clair) — v1.0.1 -->
+<!-- StoryVoice — landing storiesvoice.org — « Ex Libris » — v1.1.0 (app-first : logo app, value prop claire, comment ça marche, captures app, CTA proéminent + sticky mobile, Sherlock = démo) -->
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>StoryVoice — Vos livres méritent une voix</title>
-<meta name="description" content="StoryVoice transforme n'importe quel ebook en pièce de théâtre audio privée : chaque personnage a sa propre voix. Le cerveau littéraire — résumés, carte des personnages, questions sans spoiler — est gratuit. Seules les voix se règlent à la carte. Aucun abonnement.">
+<title>StoryVoice — Vos livres, joués comme au théâtre</title>
+<meta name="description" content="StoryVoice transforme n'importe quel ebook en pièce de théâtre audio : il détecte chaque personnage, lui donne sa propre voix, et fait vivre la carte des personnages pendant que vous écoutez. Le cerveau (résumés, carte, Q&A) est gratuit ; les voix se règlent à la carte.">
 <link rel="canonical" href="https://storiesvoice.org/">
 <meta name="theme-color" content="#f5f3ec">
 
-<!-- Open Graph / partage (TikTok, réseaux) -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="StoryVoice">
-<meta property="og:title" content="StoryVoice — Vos livres méritent une voix">
-<meta property="og:description" content="Donnez à chaque personnage de vos livres sa propre voix. Écoutez la démo Sherlock Holmes — sans compte. Cerveau gratuit, voix à la carte.">
+<meta property="og:title" content="StoryVoice — Vos livres, joués comme au théâtre">
+<meta property="og:description" content="Chargez un livre, StoryVoice détecte les personnages et donne à chacun sa propre voix. Écoutez l'histoire interprétée, pendant que la carte des personnages prend vie. Essai gratuit, sans compte.">
 <meta property="og:url" content="https://storiesvoice.org/">
 <meta property="og:image" content="https://storiesvoice.org/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="StoryVoice — Vos livres méritent une voix">
-<meta name="twitter:description" content="Chaque personnage, sa voix. Écoutez la démo sans compte. Cerveau gratuit, voix à la carte.">
+<meta name="twitter:title" content="StoryVoice — Vos livres, joués comme au théâtre">
+<meta name="twitter:description" content="Une voix par personnage, une carte vivante, des résumés sans spoiler. Essai gratuit, sans compte.">
 <meta name="twitter:image" content="https://storiesvoice.org/og-image.png">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231a1a2e'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23d8b15a' text-anchor='middle'%3ESV%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "StoryVoice",
   "applicationCategory": "MultimediaApplication",
-  "operatingSystem": "Web",
+  "operatingSystem": "Web, Android, iOS (PWA)",
   "url": "https://storiesvoice.org/",
-  "description": "Compagnon de lecture qui transforme un ebook en pièce de théâtre audio privée : narration multi-voix (une voix par personnage), résumés, carte vivante des personnages et questions sans spoiler.",
+  "description": "Compagnon de lecture qui transforme un ebook en pièce de théâtre audio : détection des personnages, narration multi-voix (une voix par personnage), carte vivante des personnages, résumés et questions sans spoiler.",
   "offers": [
     {"@type": "Offer", "name": "La Place au Balcon", "price": "7.90", "priceCurrency": "EUR"},
     {"@type": "Offer", "name": "L'Orchestre", "price": "24.90", "priceCurrency": "EUR"},
@@ -50,237 +49,179 @@
 
 <style>
 :root{
-  --paper:#f5f3ec;          /* papier filigrané */
-  --paper-2:#efe9dc;
-  --paper-deep:#e8e0cf;
-  --ink:#1a1a2e;            /* encre bleu-noir */
-  --ink-soft:#3a3a52;
-  --blood:#8b2635;          /* rouge sang séché */
-  --gold:#b08d3e;           /* or pâli */
-  --gold-soft:#cbab63;
-  --line:#cbbfa6;
-  --shadow:rgba(26,26,46,.14);
+  --paper:#f5f3ec; --paper-deep:#e8e0cf;
+  --ink:#1a1a2e; --ink-soft:#3a3a52;
+  --blood:#8b2635; --blood-dk:#73202c;
+  --gold:#b08d3e; --gold-soft:#cbab63;
+  --line:#cbbfa6; --shadow:rgba(26,26,46,.14);
+  --night:#0b0c1a; /* fond sombre de l'app, pour cadrer les captures */
   --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
   --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--sans);
-  font-size:17px;line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
-  /* texture papier : grain léger */
-  background-image:
-    radial-gradient(circle at 20% 10%, rgba(176,141,62,.05), transparent 40%),
-    radial-gradient(circle at 85% 80%, rgba(139,38,53,.04), transparent 45%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-}
-h1,h2,h3,.serif{font-family:var(--serif)}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-image:radial-gradient(circle at 18% 8%,rgba(176,141,62,.05),transparent 38%),radial-gradient(circle at 88% 78%,rgba(139,38,53,.04),transparent 42%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E")}
+h1,h2,h3,h4,.serif{font-family:var(--serif)}
 a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-.eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--blood);font-weight:600}
+.eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--blood);font-weight:700}
 
-/* ---------- en-tête ---------- */
-header.bar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(120%) blur(6px);
-  background:rgba(245,243,236,.82);border-bottom:1px solid var(--line)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:700;font-size:1.45rem;letter-spacing:.01em}
-.brand .mono{width:34px;height:34px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;
-  font-size:.95rem;color:var(--ink);background:var(--paper);box-shadow:0 1px 0 var(--gold)}
-.bar nav{display:flex;align-items:center;gap:26px}
-.bar nav a{font-size:.93rem;text-decoration:none;color:var(--ink-soft);transition:color .2s}
-.bar nav a:hover{color:var(--blood)}
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:.95rem;
-  border-radius:2px;padding:11px 20px;cursor:pointer;border:1.5px solid var(--ink);background:transparent;color:var(--ink);
-  text-decoration:none;transition:.2s;letter-spacing:.01em}
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:.96rem;border-radius:3px;padding:12px 22px;cursor:pointer;border:1.5px solid var(--ink);background:transparent;color:var(--ink);text-decoration:none;transition:.2s;white-space:nowrap}
 .btn:hover{background:var(--ink);color:var(--paper)}
-.btn.primary{background:var(--blood);border-color:var(--blood);color:#fff}
-.btn.primary:hover{background:#73202c;border-color:#73202c}
-.btn.gold{border-color:var(--gold);color:#6b531f}
-.btn.gold:hover{background:var(--gold);color:#fff}
-.btn.lg{padding:16px 30px;font-size:1.02rem}
-@media(max-width:720px){.bar nav .navlink{display:none}}
+.btn.primary{background:var(--blood);border-color:var(--blood);color:#fff;box-shadow:0 6px 18px rgba(139,38,53,.28)}
+.btn.primary:hover{background:var(--blood-dk);border-color:var(--blood-dk);transform:translateY(-1px)}
+.btn.lg{padding:16px 30px;font-size:1.06rem}
+.btn.ghost{border-color:var(--line);color:var(--ink-soft)}
+.btn.ghost:hover{background:var(--paper-deep);color:var(--ink)}
 
-/* ---------- héros ---------- */
-.hero{position:relative;padding:74px 0 40px}
-.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:46px;align-items:center}
-.hero h1{font-size:clamp(2.7rem,6.2vw,4.6rem);line-height:1.02;font-weight:700;letter-spacing:-.01em}
-.hero h1 .u{position:relative;white-space:nowrap}
-.hero h1 .u::after{content:"";position:absolute;left:0;right:100%;bottom:.06em;height:.09em;border-radius:2px;
-  background:linear-gradient(90deg,var(--blood),var(--gold));transition:right 1.1s cubic-bezier(.6,0,.2,1) .25s}
-.hero.lit h1 .u::after{right:0}
-.hero .lede{margin-top:22px;font-size:1.18rem;color:var(--ink-soft);max-width:30em;font-family:var(--serif);font-style:italic;line-height:1.45}
-.hero .cta{margin-top:30px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.model{margin-top:26px;font-size:.95rem;color:var(--ink-soft);max-width:34em}
-.model b{color:var(--ink);font-weight:600}
-.model .free{color:#2c6e49;font-weight:600}
+/* en-tête */
+header.bar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(120%) blur(7px);background:rgba(245,243,236,.86);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:1.4rem}
+.brand img{width:34px;height:34px;border-radius:8px;box-shadow:0 2px 6px var(--shadow)}
+.bar nav{display:flex;align-items:center;gap:22px}
+.bar nav .navlink{font-size:.92rem;text-decoration:none;color:var(--ink-soft)}
+.bar nav .navlink:hover{color:var(--blood)}
+@media(max-width:760px){.bar nav .navlink{display:none}}
 
-/* lecteur audio héros */
-.player{margin-top:10px;border:1px solid var(--line);background:linear-gradient(180deg,#fbf9f2,#f1ebdc);
-  border-radius:4px;padding:18px 18px 16px;box-shadow:0 6px 22px var(--shadow);max-width:520px}
-.player .pp{display:flex;align-items:center;gap:14px}
-.playbtn{flex:none;width:56px;height:56px;border-radius:50%;border:1.5px solid var(--ink);background:var(--paper);
-  display:grid;place-items:center;cursor:pointer;transition:.2s;color:var(--ink)}
-.playbtn:hover{background:var(--blood);border-color:var(--blood);color:#fff;transform:scale(1.04)}
-.playbtn svg{width:22px;height:22px;margin-left:2px}
-.player .meta{flex:1;min-width:0}
-.player .meta .who{font-family:var(--serif);font-weight:600;font-size:1.18rem;line-height:1.1}
-.player .meta .vc{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blood)}
-.player .line{margin-top:12px;font-family:var(--serif);font-style:italic;font-size:1.06rem;color:var(--ink-soft);
-  min-height:3.1em;line-height:1.4}
-/* visualiseur d'onde */
-.wave{display:flex;align-items:flex-end;gap:3px;height:26px;margin-top:6px}
-.wave i{flex:1;background:linear-gradient(180deg,var(--gold),var(--blood));border-radius:2px;height:18%;opacity:.5}
-.player.playing .wave i{animation:bounce 1s ease-in-out infinite}
-.wave i:nth-child(2n){animation-delay:.12s}.wave i:nth-child(3n){animation-delay:.26s}
-.wave i:nth-child(4n){animation-delay:.4s}.wave i:nth-child(5n){animation-delay:.18s}
-@keyframes bounce{0%,100%{height:18%}50%{height:92%;opacity:1}}
-.langtog{margin-top:14px;display:inline-flex;border:1px solid var(--line);border-radius:2px;overflow:hidden;font-size:.82rem}
-.langtog button{border:0;background:transparent;padding:6px 14px;cursor:pointer;color:var(--ink-soft);font-weight:600;font-family:var(--sans)}
-.langtog button.on{background:var(--ink);color:var(--paper)}
+/* héros */
+.hero{padding:60px 0 30px}
+.hero .grid{display:grid;grid-template-columns:1.08fr .92fr;gap:50px;align-items:center}
+@media(max-width:880px){.hero .grid{grid-template-columns:1fr;gap:34px}.hero .shot-wrap{order:-1}}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.1rem);line-height:1.04;font-weight:700;letter-spacing:-.01em;margin-top:14px}
+.hero .u{position:relative;white-space:nowrap}
+.hero .u::after{content:"";position:absolute;left:0;right:100%;bottom:.05em;height:.09em;border-radius:2px;background:linear-gradient(90deg,var(--blood),var(--gold));transition:right 1.1s cubic-bezier(.6,0,.2,1) .3s}
+.hero.lit .u::after{right:0}
+.hero .lede{margin-top:20px;font-size:1.16rem;color:var(--ink-soft);max-width:32em;line-height:1.5}
+.hero .lede b{color:var(--ink);font-weight:600}
+.hero .cta{margin-top:28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hero .model{margin-top:20px;font-size:.92rem;color:var(--ink-soft)}
+.hero .model .free{color:#2c6e49;font-weight:700}
+/* mini lecteur d'extrait */
+.extract{margin-top:18px;display:flex;align-items:center;gap:12px;border:1px solid var(--line);background:linear-gradient(180deg,#fbf9f2,#f1ebdc);border-radius:4px;padding:10px 14px;max-width:440px}
+.extract .pb{flex:none;width:42px;height:42px;border-radius:50%;border:1.5px solid var(--ink);background:var(--paper);display:grid;place-items:center;cursor:pointer;color:var(--ink);transition:.2s}
+.extract .pb:hover{background:var(--blood);border-color:var(--blood);color:#fff}
+.extract .pb svg{width:16px;height:16px;margin-left:2px}
+.extract .x{min-width:0}
+.extract .x .t{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blood);font-weight:600}
+.extract .x .l{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink-soft);line-height:1.25;margin-top:2px}
 
-/* silhouette / médaillon héros */
-.hero .figure{position:relative;display:grid;place-items:center}
-.medallion{position:relative;width:min(360px,80vw);aspect-ratio:1;border-radius:50%;
-  border:2px solid var(--ink);background:radial-gradient(circle at 50% 38%,#fbf9f2,#e9e1cf);
-  box-shadow:0 14px 40px var(--shadow),inset 0 0 0 8px var(--paper),inset 0 0 0 9px var(--gold)}
-.medallion::before{content:"❦";position:absolute;top:10px;left:50%;transform:translateX(-50%);color:var(--gold);font-size:1.4rem}
-.medallion svg{width:74%;height:74%;position:absolute;top:13%;left:13%}
-.medallion .glow{position:absolute;inset:-2px;border-radius:50%;box-shadow:0 0 0 0 rgba(139,38,53,.35);transition:.3s}
-.medallion.live .glow{animation:pulse 1.6s ease-out infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(139,38,53,.30)}100%{box-shadow:0 0 0 26px rgba(139,38,53,0)}}
-.figure .cap{margin-top:16px;text-align:center;font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:1.02rem}
-@media(max-width:860px){.hero .grid{grid-template-columns:1fr;gap:30px}.hero .figure{order:-1}}
+/* cadre « téléphone » pour les captures */
+.shot-wrap{display:grid;place-items:center}
+.phone{width:min(290px,74vw);border-radius:30px;padding:9px;background:linear-gradient(160deg,#23243a,#0b0c1a);box-shadow:0 22px 50px rgba(11,12,26,.4),0 0 0 1px rgba(255,255,255,.04) inset;position:relative}
+.phone::before{content:"";position:absolute;top:16px;left:50%;transform:translateX(-50%);width:54px;height:5px;border-radius:3px;background:rgba(255,255,255,.18);z-index:2}
+.phone img{width:100%;display:block;border-radius:23px}
+.hero .shot-wrap .phone{transform:rotate(1.4deg)}
 
-/* ---------- séparateurs chapitres (ex-libris) ---------- */
-.chapter{display:flex;align-items:center;gap:18px;margin:0 auto;padding:54px 0 8px;max-width:1080px}
+/* séparateurs ex-libris */
+.chapter{display:flex;align-items:center;gap:18px;margin:0 auto;padding:56px 0 6px;max-width:1080px}
 .chapter .rule{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
-.chapter .ex{flex:none;text-align:center;color:var(--ink)}
-.chapter .ex .num{font-family:var(--sans);font-size:.68rem;letter-spacing:.3em;color:var(--blood);text-transform:uppercase}
-.chapter .ex .ti{font-family:var(--serif);font-size:1.6rem;font-weight:700;line-height:1.1}
-.chapter .ex .seal{font-size:1.1rem;color:var(--gold)}
+.chapter .ex{flex:none;text-align:center}
+.chapter .ex .num{font-size:.66rem;letter-spacing:.3em;color:var(--blood);text-transform:uppercase;font-weight:700}
+.chapter .ex .ti{font-family:var(--serif);font-size:1.55rem;font-weight:700;line-height:1.1}
+.chapter .ex .seal{font-size:1rem;color:var(--gold)}
+section{padding:6px 0 8px}
+.section-lede{font-family:var(--serif);font-style:italic;font-size:1.18rem;color:var(--ink-soft);max-width:38em;margin:4px auto 0;text-align:center}
 
-section{padding:6px 0 10px}
-.section-lede{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--ink-soft);max-width:36em;margin:6px auto 0;text-align:center}
+/* comment ça marche */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+@media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
+.step{border:1px solid var(--line);border-radius:6px;padding:22px 18px;background:#fbf9f2cc;position:relative}
+.step .n{width:30px;height:30px;border-radius:50%;background:var(--blood);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.9rem;font-family:var(--sans)}
+.step .ic{font-size:1.7rem;margin-top:10px}
+.step h4{font-family:var(--serif);font-size:1.32rem;font-weight:600;margin-top:6px}
+.step p{margin-top:6px;color:var(--ink-soft);font-size:.95rem}
 
-/* ---------- casting ---------- */
-.cast{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:34px}
-@media(max-width:900px){.cast{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.cast{grid-template-columns:1fr 1fr}}
-.card{position:relative;border:1px solid var(--line);background:linear-gradient(180deg,#fbf9f2,#f0eadb);
-  border-radius:4px;padding:22px 16px 18px;text-align:center;cursor:pointer;transition:.22s;box-shadow:0 3px 10px var(--shadow)}
-.card:hover{transform:translateY(-4px) rotate(-.6deg);box-shadow:0 12px 26px var(--shadow);border-color:var(--gold)}
-.card .seal{width:62px;height:62px;margin:0 auto 12px;border-radius:50%;border:1.5px solid var(--ink);
-  display:grid;place-items:center;font-family:var(--serif);font-size:1.7rem;font-weight:700;background:var(--paper);
-  box-shadow:inset 0 0 0 4px var(--paper),inset 0 0 0 5px var(--gold-soft)}
-.card .nm{font-family:var(--serif);font-size:1.22rem;font-weight:600;line-height:1.1}
-.card .vc{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blood);margin-top:4px}
-.card .pl{margin-top:12px;font-size:.82rem;color:var(--ink-soft);display:inline-flex;align-items:center;gap:6px}
-.card .pl svg{width:13px;height:13px}
-.card.active{border-color:var(--blood);box-shadow:0 0 0 2px rgba(139,38,53,.18),0 12px 26px var(--shadow)}
-.card.active .seal{background:var(--blood);color:#fff;border-color:var(--blood)}
+/* aperçu (captures) */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:34px;align-items:start}
+@media(max-width:820px){.gallery{grid-template-columns:1fr;gap:34px;max-width:420px;margin-left:auto;margin-right:auto}}
+.gcard{text-align:center}
+.gcard .cap{margin-top:14px;font-family:var(--serif);font-size:1.18rem;font-weight:600}
+.gcard .sub{color:var(--ink-soft);font-size:.9rem;margin-top:3px}
 
-/* ---------- l'épreuve des voix (comparateur de moteurs) ---------- */
-.vtest-line{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,3.4vw,1.5rem);color:var(--ink);max-width:24em;margin:24px auto 2px;line-height:1.35}
-.vtest{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+/* comparateur de voix */
+.vtest-line{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,3.2vw,1.45rem);color:var(--ink);max-width:24em;margin:22px auto 2px;line-height:1.35}
+.vtest{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
 @media(max-width:780px){.vtest{grid-template-columns:1fr}}
-.vcard{border:1px solid var(--line);border-radius:6px;padding:26px 20px;background:linear-gradient(180deg,#fbf9f2,#f0eadb);text-align:center;box-shadow:0 3px 10px var(--shadow);transition:.2s}
+.vcard{border:1px solid var(--line);border-radius:6px;padding:24px 20px;background:linear-gradient(180deg,#fbf9f2,#f0eadb);text-align:center;box-shadow:0 3px 10px var(--shadow);transition:.2s}
 .vcard.premium{border-color:var(--gold)}
 .vcard.playing{border-color:var(--blood);box-shadow:0 0 0 2px rgba(139,38,53,.18),0 10px 24px var(--shadow);transform:translateY(-3px)}
-.vcard .tier{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+.vcard .tier{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
 .vcard .tier.free{color:#2c6e49}.vcard .tier.prem{color:var(--blood)}
-.vcard .eng{font-family:var(--serif);font-size:1.6rem;font-weight:700;margin-top:6px}
-.vcard .sub{font-size:.85rem;color:var(--ink-soft);margin-top:8px;min-height:3.2em;line-height:1.4}
-.vcard .vbtn{margin:18px auto 0;width:54px;height:54px;border-radius:50%;border:1.5px solid var(--ink);background:var(--paper);display:grid;place-items:center;cursor:pointer;transition:.2s;color:var(--ink)}
-.vcard .vbtn:hover{background:var(--blood);border-color:var(--blood);color:#fff;transform:scale(1.05)}
-.vcard .vbtn svg{width:19px;height:19px;margin-left:2px}
-.vcard .stars{margin-top:14px;color:var(--gold-soft);letter-spacing:3px;font-size:.95rem}
+.vcard .eng{font-family:var(--serif);font-size:1.5rem;font-weight:700;margin-top:6px}
+.vcard .sub{font-size:.84rem;color:var(--ink-soft);margin-top:8px;min-height:3.2em;line-height:1.4}
+.vcard .vbtn{margin:16px auto 0;width:50px;height:50px;border-radius:50%;border:1.5px solid var(--ink);background:var(--paper);display:grid;place-items:center;cursor:pointer;transition:.2s;color:var(--ink)}
+.vcard .vbtn:hover{background:var(--blood);border-color:var(--blood);color:#fff}
+.vcard .vbtn svg{width:18px;height:18px;margin-left:2px}
+.vcard .stars{margin-top:12px;color:var(--gold-soft);letter-spacing:3px;font-size:.92rem}
 .vcard .stars b{color:var(--gold)}
-.vnote{text-align:center;color:var(--ink-soft);font-size:.96rem;margin-top:24px;max-width:44em;margin-left:auto;margin-right:auto;font-style:italic;font-family:var(--serif)}
+.vnote{text-align:center;color:var(--ink-soft);font-size:.94rem;margin-top:22px;max-width:44em;margin-left:auto;margin-right:auto;font-style:italic;font-family:var(--serif)}
 
-/* ---------- la scène / démo ---------- */
-.stage{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;margin-top:30px;
-  border:1px solid var(--line);border-radius:6px;padding:34px;background:linear-gradient(135deg,#fbf9f2,#ece4d2);
-  box-shadow:0 8px 26px var(--shadow)}
-@media(max-width:780px){.stage{grid-template-columns:1fr;padding:26px}}
-.stage h3{font-size:1.9rem;font-weight:700}
-.stage ul{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:11px}
-.stage li{display:flex;gap:11px;align-items:flex-start;font-size:1rem;color:var(--ink-soft)}
-.stage li b{color:var(--ink);font-weight:600}
-.stage li .m{flex:none;color:var(--blood);font-size:1.1rem;line-height:1.4}
+/* démo */
+.demo{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;margin-top:30px;border:1px solid var(--line);border-radius:6px;padding:32px;background:linear-gradient(135deg,#fbf9f2,#ece4d2);box-shadow:0 8px 26px var(--shadow)}
+@media(max-width:780px){.demo{grid-template-columns:1fr;padding:26px}}
+.demo h3{font-size:1.8rem;font-weight:700}
+.demo ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:10px}
+.demo li{display:flex;gap:10px;color:var(--ink-soft)}.demo li b{color:var(--ink)}
+.demo li .m{flex:none;color:var(--blood)}
 
-/* ---------- mise en scène (gratuit) ---------- */
-.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
-@media(max-width:780px){.feats{grid-template-columns:1fr}}
-.feat{border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:4px;padding:24px;background:#fbf9f2cc}
-.feat .ic{font-size:1.7rem}
-.feat h4{font-family:var(--serif);font-size:1.4rem;font-weight:600;margin-top:8px}
-.feat p{margin-top:8px;color:var(--ink-soft);font-size:.98rem}
-.freebadge{display:inline-block;margin-top:18px;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:#2c6e49}
-
-/* ---------- confiance / privacy ---------- */
-.trust{margin-top:26px;border:1px dashed var(--line);border-radius:6px;padding:28px;text-align:center;background:#fbf9f288}
-.trust h3{font-size:1.7rem}
-.trust p{margin:10px auto 0;max-width:40em;color:var(--ink-soft)}
-.formats{margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.formats span{border:1px solid var(--line);border-radius:2px;padding:6px 14px;font-size:.82rem;letter-spacing:.08em;color:var(--ink-soft)}
-
-/* ---------- billetterie ---------- */
-.tickets{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px;align-items:stretch}
+/* billetterie */
+.tickets{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px;align-items:stretch}
 @media(max-width:820px){.tickets{grid-template-columns:1fr}}
-.ticket{position:relative;border:1px solid var(--ink);border-radius:6px;padding:28px 24px;background:linear-gradient(180deg,#fbf9f2,#f0eadb);
-  display:flex;flex-direction:column;box-shadow:0 4px 14px var(--shadow)}
+.ticket{position:relative;border:1px solid var(--ink);border-radius:6px;padding:26px 24px;background:linear-gradient(180deg,#fbf9f2,#f0eadb);display:flex;flex-direction:column;box-shadow:0 4px 14px var(--shadow)}
 .ticket.feature{border:2px solid var(--blood);box-shadow:0 12px 30px var(--shadow);transform:translateY(-6px)}
-.ticket .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blood);color:#fff;
-  font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:5px 14px;border-radius:2px;font-weight:600}
-.ticket .name{font-family:var(--serif);font-size:1.7rem;font-weight:700}
-.ticket .price{font-family:var(--serif);font-size:2.7rem;font-weight:700;margin-top:6px;line-height:1}
-.ticket .price small{font-size:1rem;font-weight:500;color:var(--ink-soft)}
-.ticket .hours{margin-top:6px;color:var(--blood);font-weight:600;font-size:.95rem}
-.ticket .desc{margin-top:14px;color:var(--ink-soft);font-size:.95rem;flex:1}
-.ticket .btn{margin-top:20px;justify-content:center}
-.note-free{text-align:center;font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--ink);margin-top:34px}
+.ticket .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--blood);color:#fff;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;padding:5px 14px;border-radius:2px;font-weight:700}
+.ticket .name{font-family:var(--serif);font-size:1.6rem;font-weight:700}
+.ticket .price{font-family:var(--serif);font-size:2.6rem;font-weight:700;margin-top:4px;line-height:1}
+.ticket .hours{margin-top:6px;color:var(--blood);font-weight:600;font-size:.94rem}
+.ticket .desc{margin-top:12px;color:var(--ink-soft);font-size:.93rem;flex:1}
+.ticket .btn{margin-top:18px}
+.note-free{text-align:center;font-family:var(--serif);font-style:italic;font-size:1.3rem;margin-top:32px}
 .note-free b{color:#2c6e49}
-.subnote{text-align:center;color:var(--ink-soft);font-size:.92rem;margin-top:8px}
+.subnote{text-align:center;color:var(--ink-soft);font-size:.9rem;margin-top:8px}
 
-/* ---------- faq ---------- */
-.faq{margin-top:30px;max-width:780px;margin-left:auto;margin-right:auto}
+/* faq */
+.faq{margin:30px auto 0;max-width:780px}
 .qa{border-bottom:1px solid var(--line)}
-.qa summary{cursor:pointer;list-style:none;padding:20px 4px;font-family:var(--serif);font-size:1.3rem;font-weight:600;
-  display:flex;justify-content:space-between;align-items:center;gap:14px}
+.qa summary{cursor:pointer;list-style:none;padding:18px 4px;font-family:var(--serif);font-size:1.26rem;font-weight:600;display:flex;justify-content:space-between;gap:14px;align-items:center}
 .qa summary::-webkit-details-marker{display:none}
 .qa summary .pm{flex:none;color:var(--blood);font-size:1.4rem;transition:.2s}
 .qa[open] summary .pm{transform:rotate(45deg)}
-.qa .a{padding:0 4px 20px;color:var(--ink-soft);font-size:1rem}
+.qa .a{padding:0 4px 18px;color:var(--ink-soft)}
 .qa .a code{background:var(--paper-deep);padding:2px 7px;border-radius:3px;font-family:var(--serif);font-style:italic;color:var(--ink)}
 
-/* ---------- pied ---------- */
-footer{margin-top:60px;border-top:1px solid var(--line);padding:40px 0 50px;background:#efe8d8aa}
-footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-start}
-footer .brand{font-size:1.3rem}
-footer .col h5{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blood);margin-bottom:10px}
-footer a{display:block;color:var(--ink-soft);text-decoration:none;font-size:.94rem;padding:3px 0}
+/* pied */
+footer{margin-top:54px;border-top:1px solid var(--line);padding:38px 0 90px;background:#efe8d8aa}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer .brand img{width:30px;height:30px;border-radius:7px}
+footer .col h5{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blood);margin-bottom:8px}
+footer a{display:block;color:var(--ink-soft);text-decoration:none;font-size:.92rem;padding:3px 0}
 footer a:hover{color:var(--blood)}
-.legal{margin-top:28px;border-top:1px solid var(--line);padding-top:18px;color:var(--ink-soft);font-size:.84rem;
-  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.legal{margin-top:24px;border-top:1px solid var(--line);padding-top:16px;color:var(--ink-soft);font-size:.82rem;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* CTA sticky mobile (façon DictoKey) */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(245,243,236,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);transform:translateY(120%);transition:transform .35s cubic-bezier(.5,0,.2,1)}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta .btn{flex:1}
+@media(min-width:761px){.sticky-cta{display:none!important}}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
-.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 </style>
 </head>
 <body>
 
 <header class="bar">
   <div class="wrap">
-    <a class="brand" href="#" style="text-decoration:none"><span class="mono">SV</span>StoryVoice</a>
+    <a class="brand" href="#top" style="text-decoration:none"><img src="assets/logo.png" alt="StoryVoice">StoryVoice</a>
     <nav>
-      <a class="navlink" href="#scene">La démo</a>
-      <a class="navlink" href="#casting">Le casting</a>
-      <a class="navlink" href="#billetterie">Tarifs</a>
-      <a class="btn" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">Ouvrir l'app</a>
+      <a class="navlink" href="#how">Comment ça marche</a>
+      <a class="navlink" href="#apercu">Aperçu</a>
+      <a class="navlink" href="#tarifs">Tarifs</a>
+      <a class="btn primary" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">Ouvrir l'app</a>
     </nav>
   </div>
 </header>
@@ -289,379 +230,199 @@ footer a:hover{color:var(--blood)}
 <section class="hero" id="top">
   <div class="wrap grid">
     <div>
-      <p class="eyebrow">Lecture augmentée · narration multi-voix</p>
-      <h1>Vos livres<br>méritent <span class="u">une voix.</span></h1>
-      <p class="lede">StoryVoice donne à chaque personnage la sienne. Sherlock parle, Watson répond, le Roi tonne — et vous écoutez, comme au théâtre.</p>
-
-      <div class="player" id="heroPlayer">
-        <div class="pp">
-          <button class="playbtn" id="heroBtn" aria-label="Écouter l'extrait">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-          <div class="meta">
-            <div class="who serif" id="heroWho">Écoutez 20 secondes</div>
-            <div class="vc" id="heroVoice">221B Baker Street · Holmes &amp; Watson</div>
-            <div class="wave" aria-hidden="true">
-              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-            </div>
-          </div>
-        </div>
-        <div class="line serif" id="heroLine">« Le mariage vous sied, Watson… » — appuyez sur ▶ pour entrer dans la scène.</div>
-        <div class="langtog" role="group" aria-label="Langue de la démo">
-          <button data-lang="fr" class="on">Français</button>
-          <button data-lang="en">English</button>
-        </div>
+      <p class="eyebrow">Compagnon de lecture · narration multi-voix</p>
+      <h1>Vos livres, joués <span class="u">comme au théâtre.</span></h1>
+      <p class="lede">Chargez un livre : StoryVoice détecte chaque personnage et lui donne <b>sa propre voix</b>. Vous écoutez l'histoire interprétée, pendant qu'une <b>carte vivante</b> des personnages se révèle — sans spoiler.</p>
+      <div class="cta">
+        <a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">✨ Essayer gratuitement</a>
+        <button class="btn ghost lg" id="extractBtn" type="button">▶ Écouter un extrait</button>
       </div>
-
-      <p class="model"><span class="free">Le cerveau littéraire est gratuit</span> — résumés, carte vivante des personnages, questions sans spoiler. <b>Seules les voix se règlent à la carte.</b> Aucun abonnement.</p>
+      <div class="extract" id="extract" hidden>
+        <button class="pb" id="extractPlay" aria-label="Lecture"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="x"><div class="t" id="exWho">Extrait · narration multi-voix</div><div class="l" id="exLine">« Le mariage vous sied, Watson… »</div></div>
+      </div>
+      <p class="model"><span class="free">Cerveau gratuit</span> — résumés, carte des personnages, questions sans spoiler. Les <b>voix</b> se règlent à la carte, sans abonnement.</p>
     </div>
-
-    <div class="figure">
-      <div class="medallion" id="medallion">
-        <span class="glow"></span>
-        <!-- silhouette victorienne stylisée « gravure » (deerstalker + pipe) — trait, sans portrait nommé -->
-        <svg viewBox="0 0 200 200" fill="none" stroke="#1a1a2e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M64 78c0-22 16-38 36-38s36 16 36 30c0 6-2 10-2 10" opacity=".9"/>
-          <path d="M58 76c6-4 18-7 42-7s36 3 42 7c4 2 4 6-2 7-12 2-26 3-40 3s-28-1-40-3c-6-1-6-5-2-7z"/>
-          <path d="M84 92c-3 10-4 22-3 33 1 9 4 17 9 23"/>
-          <path d="M118 92c3 9 4 20 3 31"/>
-          <path d="M92 108c4 3 12 3 16 0"/>
-          <path d="M86 96c2 2 5 3 7 2M114 96c-2 2-5 3-7 2"/>
-          <path d="M96 120c3 2 7 2 10 0"/>
-          <path d="M120 128l26 16c5 3 6 9 2 13" opacity=".85"/>
-          <circle cx="150" cy="160" r="6" fill="#8b2635" stroke="none" opacity=".9"/>
-          <path d="M70 150c-6 6-9 14-9 24M130 150c6 6 9 14 9 24"/>
-          <!-- onde sonore surimprimée -->
-          <g stroke="#b08d3e" stroke-width="2" opacity=".55">
-            <path d="M30 100c0-8 0-8 0 0M40 100c0-16 0-16 0 0M50 100c0-26 0-26 0 0M158 100c0-26 0-26 0 0M168 100c0-16 0-16 0 0M178 100c0-8 0-8 0 0"/>
-          </g>
-        </svg>
-      </div>
-      <p class="cap">« Pour Sherlock Holmes, elle est toujours <i>la femme</i>. »</p>
+    <div class="shot-wrap">
+      <div class="phone"><img src="screens/map.png" alt="StoryVoice — carte vivante des personnages (constellation)"></div>
     </div>
   </div>
 </section>
 
-<!-- ============ LA SCÈNE / DÉMO ============ -->
-<div class="chapter">
-  <span class="rule"></span>
-  <span class="ex"><span class="num">Chapitre I</span><div class="ti">La Scène</div><span class="seal">❦</span></span>
-  <span class="rule"></span>
+<!-- ============ COMMENT ÇA MARCHE ============ -->
+<div class="chapter" id="how">
+  <span class="rule"></span><span class="ex"><span class="num">En bref</span><div class="ti">Comment ça marche</div><span class="seal">❦</span></span><span class="rule"></span>
 </div>
-<section id="scene"><div class="wrap reveal">
-  <div class="stage">
+<section><div class="wrap reveal">
+  <p class="section-lede">Un livre entre. Une pièce de théâtre audio en sort. En quatre temps.</p>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><div class="ic">📖</div><h4>Chargez un livre</h4><p>EPUB, PDF ou TXT — le fichier reste sur votre appareil, jamais sur nos serveurs.</p></div>
+    <div class="step"><div class="n">2</div><div class="ic">🔍</div><h4>L'IA le scanne</h4><p>StoryVoice détecte et trie les personnages, les lieux et leurs relations, et rédige des résumés.</p></div>
+    <div class="step"><div class="n">3</div><div class="ic">🎭</div><h4>Une voix par personnage</h4><p>Chaque personnage reçoit une voix distincte. La narration devient une vraie distribution.</p></div>
+    <div class="step"><div class="n">4</div><div class="ic">✦</div><h4>La carte prend vie</h4><p>La constellation des personnages se révèle au fil de votre lecture — sans jamais vous spoiler.</p></div>
+  </div>
+</div></section>
+
+<!-- ============ APERÇU (captures app) ============ -->
+<div class="chapter" id="apercu">
+  <span class="rule"></span><span class="ex"><span class="num">Dans l'application</span><div class="ti">Aperçu</div><span class="seal">❦</span></span><span class="rule"></span>
+</div>
+<section><div class="wrap reveal">
+  <p class="section-lede">L'application, en vrai. PC et mobile, installable, gratuite à l'essai.</p>
+  <div class="gallery">
+    <div class="gcard"><div class="phone"><img src="screens/map.png" alt="Carte vivante des personnages"></div><div class="cap">La carte vivante</div><div class="sub">Personnages, lieux et liens en constellation.</div></div>
+    <div class="gcard"><div class="phone"><img src="screens/listen.png" alt="Narration multi-voix"></div><div class="cap">La narration multi-voix</div><div class="sub">Chaque réplique, jouée par sa voix.</div></div>
+    <div class="gcard"><div class="phone"><img src="screens/home.png" alt="Accueil — résumés et carte"></div><div class="cap">Le cerveau, gratuit</div><div class="sub">Résumés à la carte, exploration sans spoiler.</div></div>
+  </div>
+  <div style="text-align:center;margin-top:30px"><a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">✨ Essayer maintenant — gratuit</a></div>
+</div></section>
+
+<!-- ============ L'ÉPREUVE DES VOIX (comparateur) ============ -->
+<div class="chapter">
+  <span class="rule"></span><span class="ex"><span class="num">La qualité des voix</span><div class="ti">L'Épreuve des Voix</div><span class="seal">❦</span></span><span class="rule"></span>
+</div>
+<section id="voix"><div class="wrap reveal" style="text-align:center">
+  <p class="section-lede">La même réplique, trois moteurs. À vous de juger — l'oreille décide.</p>
+  <p class="vtest-line" id="cmpLine"></p>
+  <div class="vtest" id="vtest">
+    <div class="vcard" data-engine="browser"><div class="tier free">Gratuit · instantané</div><div class="eng serif">Votre navigateur</div><div class="sub">La voix intégrée à votre appareil. Sans coût, mais plate et mécanique.</div><button class="vbtn" aria-label="Écouter le navigateur"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars">★<span style="opacity:.3">★★★</span></div></div>
+    <div class="vcard premium" data-engine="openai"><div class="tier prem">Premium</div><div class="eng serif">OpenAI</div><div class="sub">La voix par défaut de StoryVoice. Du souffle, de l'intention, un vrai jeu d'acteur.</div><button class="vbtn" aria-label="Écouter OpenAI"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars"><b>★★★★</b><span style="opacity:.3">★</span></div></div>
+    <div class="vcard premium" data-engine="gemini"><div class="tier prem">Premium ✨</div><div class="eng serif">Gemini</div><div class="sub">Un autre timbre premium, signé Google. Chaud, posé — à comparer selon votre goût.</div><button class="vbtn" aria-label="Écouter Gemini"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars"><b>★★★★</b><span style="opacity:.3">★</span></div></div>
+  </div>
+  <p class="vnote">Les voix premium ne sont pas gratuites — c'est pourquoi StoryVoice les propose au comptant, sans abonnement. Le navigateur, lui, reste toujours disponible sans payer.</p>
+</div></section>
+
+<!-- ============ LA DÉMO (Sherlock = exemple domaine public) ============ -->
+<div class="chapter">
+  <span class="rule"></span><span class="ex"><span class="num">Essai sans compte</span><div class="ti">La Démo</div><span class="seal">❦</span></span><span class="rule"></span>
+</div>
+<section id="demo"><div class="wrap reveal">
+  <div class="demo">
     <div>
-      <p class="eyebrow">Démo jouable · sans compte</p>
-      <h3 class="serif">Entrez dans <i>Un scandale en Bohême</i>.</h3>
+      <p class="eyebrow">Jouable tout de suite · sans inscription</p>
+      <h3 class="serif">Essayez sur un classique du domaine public.</h3>
       <ul>
-        <li><span class="m">❦</span><span>Une scène complète d'Arthur Conan Doyle, <b>cinq personnages, cinq voix distinctes</b>.</span></li>
-        <li><span class="m">❦</span><span>La <b>carte vivante des personnages</b> se dessine sous vos yeux, sans spoiler.</span></li>
-        <li><span class="m">❦</span><span>Bascule <b>français / anglais</b> d'un geste — texte et voix suivent.</span></li>
-        <li><span class="m">❦</span><span>Aucun compte, aucune carte bancaire. Vous écoutez, simplement.</span></li>
+        <li><span class="m">❦</span><span>Notre démo charge <b>« Un scandale en Bohême »</b> (Conan Doyle) : cinq personnages, cinq voix.</span></li>
+        <li><span class="m">❦</span><span>Vous voyez la <b>carte vivante</b> se dessiner et entendez la <b>narration multi-voix</b>.</span></li>
+        <li><span class="m">❦</span><span>Pour lire <b>vos</b> livres, il suffira ensuite de crédits de voix.</span></li>
       </ul>
     </div>
     <div style="text-align:center">
-      <a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        Vivre la démo complète
-      </a>
-      <p style="margin-top:14px;font-family:var(--serif);font-style:italic;color:var(--ink-soft)">Ouvre l'expérience StoryVoice dans un nouvel onglet.</p>
+      <a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:2px"><path d="M8 5v14l11-7z"/></svg>Lancer la démo</a>
+      <p style="margin-top:12px;font-family:var(--serif);font-style:italic;color:var(--ink-soft)">Ouvre StoryVoice dans un nouvel onglet.</p>
     </div>
-  </div>
-</div></section>
-
-<!-- ============ LE CASTING ============ -->
-<div class="chapter">
-  <span class="rule"></span>
-  <span class="ex"><span class="num">Chapitre II</span><div class="ti">Le Casting</div><span class="seal">❦</span></span>
-  <span class="rule"></span>
-</div>
-<section id="casting"><div class="wrap reveal">
-  <p class="section-lede">Cinq personnages, cinq voix. Aucune ne ressemble à une autre. <b>Cliquez sur un visage pour l'entendre.</b></p>
-  <div class="cast" id="cast"></div>
-</div></section>
-
-<!-- ============ L'ÉPREUVE DES VOIX (comparateur de moteurs) ============ -->
-<div class="chapter">
-  <span class="rule"></span>
-  <span class="ex"><span class="num">Chapitre III</span><div class="ti">L'Épreuve des Voix</div><span class="seal">❦</span></span>
-  <span class="rule"></span>
-</div>
-<section id="voix"><div class="wrap reveal" style="text-align:center">
-  <p class="section-lede">La même réplique, trois moteurs. À vous de juger, l'oreille décide.</p>
-  <p class="vtest-line" id="cmpLine"></p>
-  <div class="vtest" id="vtest">
-    <div class="vcard" data-engine="browser">
-      <div class="tier free">Gratuit · instantané</div>
-      <div class="eng serif">Votre navigateur</div>
-      <div class="sub">La voix intégrée à votre appareil. Sans coût, mais plate et mécanique.</div>
-      <button class="vbtn" aria-label="Écouter la voix du navigateur"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-      <div class="stars">★<span style="opacity:.3">★★★</span></div>
-    </div>
-    <div class="vcard premium" data-engine="openai">
-      <div class="tier prem">Premium</div>
-      <div class="eng serif">OpenAI</div>
-      <div class="sub">La voix par défaut de StoryVoice. Du souffle, de l'intention, un vrai jeu d'acteur.</div>
-      <button class="vbtn" aria-label="Écouter la voix OpenAI"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-      <div class="stars"><b>★★★★</b><span style="opacity:.3">★</span></div>
-    </div>
-    <div class="vcard premium" data-engine="gemini">
-      <div class="tier prem">Premium ✨</div>
-      <div class="eng serif">Gemini</div>
-      <div class="sub">Un autre timbre premium, signé Google. Chaud, posé — à comparer selon votre goût.</div>
-      <button class="vbtn" aria-label="Écouter la voix Gemini"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-      <div class="stars"><b>★★★★</b><span style="opacity:.3">★</span></div>
-    </div>
-  </div>
-  <p class="vnote">Les voix premium ne sont pas gratuites — c'est pourquoi StoryVoice les propose au comptant, sans abonnement. Le navigateur, lui, restera toujours disponible sans payer.</p>
-</div></section>
-
-<!-- ============ LA MISE EN SCÈNE (GRATUIT) ============ -->
-<div class="chapter">
-  <span class="rule"></span>
-  <span class="ex"><span class="num">Chapitre IV</span><div class="ti">La Mise en Scène</div><span class="seal">❦</span></span>
-  <span class="rule"></span>
-</div>
-<section id="gratuit"><div class="wrap reveal" style="text-align:center">
-  <p class="section-lede">Avant même d'entendre une voix, StoryVoice comprend votre livre. Et ça, c'est offert.</p>
-  <div class="feats" style="text-align:left">
-    <div class="feat"><div class="ic">🗺️</div><h4>Carte vivante</h4><p>Les personnages, leurs liens et leurs secrets apparaissent à mesure que vous avancez — jamais en avance, jamais de spoiler.</p></div>
-    <div class="feat"><div class="ic">📖</div><h4>Résumés à la demande</h4><p>Un résumé court, moyen ou détaillé de chaque chapitre, calé exactement sur l'endroit où vous en êtes.</p></div>
-    <div class="feat"><div class="ic">💬</div><h4>Questions sans spoiler</h4><p>Posez n'importe quelle question sur l'intrigue : la réponse s'arrête pile à votre page, jamais au-delà.</p></div>
-  </div>
-  <p class="freebadge">Tout ceci est gratuit. Pour de bon.</p>
-</div></section>
-
-<!-- ============ CONFIANCE ============ -->
-<section id="prive"><div class="wrap reveal">
-  <div class="trust">
-    <p class="eyebrow">Vos livres restent vos livres</p>
-    <h3 class="serif">Rien ne quitte votre appareil.</h3>
-    <p>Vos fichiers sont lus et analysés <b>dans votre navigateur</b>. Ils ne sont jamais envoyés ni stockés sur nos serveurs. StoryVoice est un outil de lecture privée — pensez-le comme un carnet de notes, pas comme une bibliothèque publique.</p>
-    <div class="formats"><span>EPUB</span><span>PDF</span><span>TXT</span><span>Domaine public</span><span>Auteurs indépendants</span></div>
   </div>
 </div></section>
 
 <!-- ============ BILLETTERIE ============ -->
-<div class="chapter">
-  <span class="rule"></span>
-  <span class="ex"><span class="num">Chapitre V</span><div class="ti">La Billetterie</div><span class="seal">❦</span></span>
-  <span class="rule"></span>
+<div class="chapter" id="tarifs">
+  <span class="rule"></span><span class="ex"><span class="num">Les voix, à la carte</span><div class="ti">La Billetterie</div><span class="seal">❦</span></span><span class="rule"></span>
 </div>
-<section id="billetterie"><div class="wrap reveal">
+<section><div class="wrap reveal">
   <p class="section-lede">Le cerveau est gratuit. Vous ne payez que la voix — au comptant, jamais d'abonnement.</p>
   <div class="tickets">
-    <div class="ticket">
-      <div class="name serif">La Place au Balcon</div>
-      <div class="price">7,90 €</div>
-      <div class="hours">≈ 3 h 20 de narration</div>
-      <div class="desc">Pour goûter l'expérience sur un premier livre. 300 000 crédits de voix, valables 12 mois.</div>
-      <a class="btn gold" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/832792f9-c1f3-4e0f-bd09-8b5bdde22a2d" href="#">Prendre ma place</a>
-    </div>
-    <div class="ticket feature">
-      <span class="tag">Le plus choisi</span>
-      <div class="name serif">L'Orchestre</div>
-      <div class="price">24,90 €</div>
-      <div class="hours">≈ 11 h de narration</div>
-      <div class="desc">Le bon équilibre : de quoi écouter plusieurs romans en entier. 1 000 000 de crédits de voix, valables 12 mois.</div>
-      <a class="btn primary" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/ec19abce-6abe-4fd4-a6d4-c2be0694aa99" href="#">Prendre ma place</a>
-    </div>
-    <div class="ticket">
-      <div class="name serif">La Loge</div>
-      <div class="price">64,90 €</div>
-      <div class="hours">≈ 33 h de narration</div>
-      <div class="desc">Pour les grands lecteurs. 3 000 000 de crédits de voix, le meilleur tarif à l'heure, valables 12 mois.</div>
-      <a class="btn gold" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/abd00154-2da2-4f69-8044-2f4b46723de6" href="#">Prendre ma place</a>
-    </div>
+    <div class="ticket"><div class="name serif">La Place au Balcon</div><div class="price">7,90 €</div><div class="hours">≈ 3 h 20 de narration</div><div class="desc">Pour goûter l'expérience sur un premier livre. 300 000 crédits de voix, valables 12 mois.</div><a class="btn ghost" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/832792f9-c1f3-4e0f-bd09-8b5bdde22a2d" href="#">Prendre ma place</a></div>
+    <div class="ticket feature"><span class="tag">Le plus choisi</span><div class="name serif">L'Orchestre</div><div class="price">24,90 €</div><div class="hours">≈ 11 h de narration</div><div class="desc">Le bon équilibre : de quoi écouter plusieurs romans en entier. 1 000 000 de crédits, valables 12 mois.</div><a class="btn primary" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/ec19abce-6abe-4fd4-a6d4-c2be0694aa99" href="#">Prendre ma place</a></div>
+    <div class="ticket"><div class="name serif">La Loge</div><div class="price">64,90 €</div><div class="hours">≈ 33 h de narration</div><div class="desc">Pour les grands lecteurs. 3 000 000 de crédits, le meilleur tarif à l'heure, valables 12 mois.</div><a class="btn ghost" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/abd00154-2da2-4f69-8044-2f4b46723de6" href="#">Prendre ma place</a></div>
   </div>
   <p class="note-free">Lire avec la carte et les résumés ? <b>0 €.</b> Toujours.</p>
-  <p class="subnote">Paiement sécurisé par LemonSqueezy. Après l'achat, votre code d'accès vous est envoyé par e-mail, avec les instructions.</p>
+  <p class="subnote">Paiement sécurisé par LemonSqueezy. Après l'achat, votre code d'accès arrive par e-mail, avec les instructions.</p>
 </div></section>
 
 <!-- ============ FAQ ============ -->
 <div class="chapter">
-  <span class="rule"></span>
-  <span class="ex"><span class="num">Chapitre VI</span><div class="ti">Le Programme</div><span class="seal">❦</span></span>
-  <span class="rule"></span>
+  <span class="rule"></span><span class="ex"><span class="num">Le Programme</span><div class="ti">Questions</div><span class="seal">❦</span></span><span class="rule"></span>
 </div>
 <section id="faq"><div class="wrap reveal">
   <div class="faq">
-    <details class="qa"><summary>Mes ebooks personnels sont-ils privés ? <span class="pm">+</span></summary>
-      <div class="a">Oui, entièrement. Vos fichiers restent dans votre navigateur et ne sont jamais envoyés sur nos serveurs. Seules les voix sont synthétisées à distance, à partir du texte que vous lisez — le fichier, lui, ne bouge pas.</div></details>
-    <details class="qa"><summary>Puis-je changer les voix des personnages ? <span class="pm">+</span></summary>
-      <div class="a">Oui. StoryVoice propose une distribution par défaut, et vous pouvez réattribuer les voix à votre goût pour chaque personnage.</div></details>
-    <details class="qa"><summary>Que se passe-t-il quand mes crédits sont épuisés ? <span class="pm">+</span></summary>
-      <div class="a">La lecture augmentée (résumés, carte, questions) continue de fonctionner gratuitement. Seule la narration audio se met en pause : il vous suffit de reprendre un billet quand vous le souhaitez. Aucun prélèvement automatique.</div></details>
-    <details class="qa"><summary>J'ai déjà acheté un code — où je le colle ? <span class="pm">+</span></summary>
-      <div class="a">Ouvrez l'application, puis <code>⚙ Réglages → Code d'accès</code> et collez le code reçu par e-mail (il commence par <code>sv_</code>). Votre solde de voix apparaît aussitôt. Un souci ? Écrivez à quangapps.dev@gmail.com.</div></details>
+    <details class="qa"><summary>Concrètement, qu'est-ce que StoryVoice fait ? <span class="pm">+</span></summary><div class="a">Vous chargez un ebook. StoryVoice l'analyse : il détecte les personnages, les lieux et leurs relations, rédige des résumés, et peut narrer le texte avec une <b>voix différente par personnage</b>. Le tout dans une seule application web (installable sur PC et mobile).</div></details>
+    <details class="qa"><summary>Mes ebooks personnels sont-ils privés ? <span class="pm">+</span></summary><div class="a">Oui. Vos fichiers restent dans votre navigateur et ne sont jamais envoyés sur nos serveurs. Seules les voix sont synthétisées à distance, à partir du texte lu.</div></details>
+    <details class="qa"><summary>C'est gratuit ou payant ? <span class="pm">+</span></summary><div class="a">La lecture augmentée — résumés, carte des personnages, questions sans spoiler — est <b>gratuite</b>. Seule la narration vocale premium se règle, via des crédits de voix (sans abonnement).</div></details>
+    <details class="qa"><summary>J'ai déjà acheté un code — où je le colle ? <span class="pm">+</span></summary><div class="a">Ouvrez l'application, puis <code>⚙ Réglages → Code d'accès</code> et collez le code reçu par e-mail (il commence par <code>sv_</code>). Un souci ? Écrivez à quangapps.dev@gmail.com.</div></details>
   </div>
-  <div style="text-align:center;margin-top:34px">
-    <a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">Lever le rideau →</a>
-  </div>
+  <div style="text-align:center;margin-top:32px"><a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">✨ Essayer StoryVoice gratuitement</a></div>
 </div></section>
 
 <footer>
   <div class="wrap">
     <div>
-      <div class="brand"><span class="mono">SV</span>StoryVoice</div>
-      <p style="margin-top:10px;color:var(--ink-soft);max-width:24em;font-family:var(--serif);font-style:italic">Une compagnie de théâtre fantôme pour vos livres.</p>
+      <a class="brand" href="#top" style="text-decoration:none;font-size:1.3rem"><img src="assets/logo.png" alt="StoryVoice">StoryVoice</a>
+      <p style="margin-top:10px;color:var(--ink-soft);max-width:25em;font-family:var(--serif);font-style:italic">Vos livres, joués comme au théâtre.</p>
     </div>
-    <div class="col">
-      <h5>L'expérience</h5>
-      <a href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">Ouvrir l'application</a>
-      <a href="#scene">La démo Sherlock</a>
-      <a href="#billetterie">Tarifs</a>
-    </div>
-    <div class="col">
-      <h5>Contact</h5>
-      <a href="mailto:quangapps.dev@gmail.com">quangapps.dev@gmail.com</a>
-      <a href="#faq">Questions fréquentes</a>
-    </div>
+    <div class="col"><h5>L'application</h5><a href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">Ouvrir l'app</a><a href="#how">Comment ça marche</a><a href="#tarifs">Tarifs</a></div>
+    <div class="col"><h5>Contact</h5><a href="mailto:quangapps.dev@gmail.com">quangapps.dev@gmail.com</a><a href="#faq">Questions fréquentes</a></div>
   </div>
-  <div class="wrap legal">
-    <span>© 2026 StoryVoice — outil de lecture privée. Démo : <i>A Scandal in Bohemia</i>, A. C. Doyle (domaine public).</span>
-    <span>v1.0.1</span>
-  </div>
+  <div class="wrap legal"><span>© 2026 StoryVoice — outil de lecture privée. Démo : <i>A Scandal in Bohemia</i>, A. C. Doyle (domaine public).</span><span>v1.1.0</span></div>
 </footer>
+
+<!-- CTA sticky mobile -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn primary" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">✨ Essayer gratuitement</a>
+</div>
 
 <audio id="au" preload="none"></audio>
 
 <script>
-const VERSION="1.0.1";
+const VERSION="1.1.0";
 const AUDIO_BASE="https://quang101182.github.io/storyvoice/demo/audio/";
 let LANG="fr";
-
-const HERO=[
- {who:"Sherlock Holmes",vc:"Voix · Echo",fr:"« Le mariage vous sied. Je crois, Watson, que vous avez pris sept livres et demie depuis que je vous ai vu. »",en:"“Wedlock suits you. I think, Watson, that you have put on seven and a half pounds since I saw you.”",f:"c1_t2"},
- {who:"Dr Watson",vc:"Voix · Onyx",fr:"« Sept ! Et de nouveau en clientèle, je vois. Mais comment le savez-vous ? »",en:"“Seven! And in practice again, I see. But how do you know?”",f:"c1_t3"},
- {who:"Sherlock Holmes",vc:"Voix · Echo",fr:"« Je le vois, je le déduis. Un gentleman entre dans ma chambre, sentant l'iodoforme, avec une marque de nitrate d'argent sur l'index… »",en:"“I see it, I deduce it. A gentleman walks into my rooms smelling of iodoform, with a black mark of nitrate of silver upon his forefinger…”",f:"c1_t4"}
-];
-const CAST=[
- {nm:"Le Narrateur",vc:"Onyx",mono:"N",fr:"« Pour Sherlock Holmes, elle est toujours la femme. »",en:"“To Sherlock Holmes she is always the woman.”",f:"c1_t0"},
- {nm:"Sherlock Holmes",vc:"Echo",mono:"H",fr:"« Je le vois, je le déduis… »",en:"“I see it, I deduce it…”",f:"c1_t4"},
- {nm:"Dr Watson",vc:"Onyx",mono:"W",fr:"« Mais comment le savez-vous ? »",en:"“But how do you know?”",f:"c1_t3"},
- {nm:"Le Roi de Bohême",vc:"Ash",mono:"R",fr:"« Vous avez raison. Je suis le Roi. »",en:"“You are right. I am the King.”",f:"c1_t14"},
- {nm:"Irène Adler",vc:"Coral",mono:"I",fr:"« L'église Sainte-Monique, John, et une demi-livre si vous y êtes en vingt minutes ! »",en:"“The Church of Saint Monica, John, and half a sovereign if you reach it in twenty minutes!”",f:"c2_t7"}
-];
-
 const au=document.getElementById("au");
-const heroPlayer=document.getElementById("heroPlayer");
-const heroBtn=document.getElementById("heroBtn");
-const heroWho=document.getElementById("heroWho");
-const heroVoice=document.getElementById("heroVoice");
-const heroLine=document.getElementById("heroLine");
-const medallion=document.getElementById("medallion");
-let mode=null,seqIdx=0,activeCard=null;
 
-function url(f){return AUDIO_BASE+f+"_"+LANG+".mp3";}
-function setPlayingUI(on){heroPlayer.classList.toggle("playing",on);medallion.classList.toggle("live",on&&mode==="hero");}
-function pIcon(){heroBtn.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';}
-function sIcon(){heroBtn.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';}
-
-function stopAll(){au.pause();au.currentTime=0;mode=null;setPlayingUI(false);pIcon();
-  if(activeCard){activeCard.classList.remove("active");activeCard=null;}
-  try{speechSynthesis.cancel();}catch(e){}
-  document.querySelectorAll(".vcard").forEach(v=>v.classList.remove("playing"));}
-
-function playHero(){
-  if(mode==="hero" && !au.paused){stopAll();return;}
-  mode="hero";seqIdx=0;
-  if(activeCard){activeCard.classList.remove("active");activeCard=null;}
-  playHeroTurn();
-}
-function playHeroTurn(){
-  if(seqIdx>=HERO.length){stopAll();heroWho.textContent="Et la scène continue…";heroVoice.textContent="221B Baker Street";return;}
-  const t=HERO[seqIdx];
-  heroWho.textContent=t.who;heroVoice.textContent=t.vc;
-  heroLine.textContent=LANG==="fr"?t.fr:t.en;
-  au.src=url(t.f);au.play().then(()=>{setPlayingUI(true);sIcon();}).catch(()=>{});
+/* --- extrait héros (Holmes↔Watson) --- */
+const HERO=[
+ {who:"Sherlock Holmes",fr:"« Le mariage vous sied. Je crois, Watson, que vous avez pris sept livres et demie depuis que je vous ai vu. »",f:"c1_t2"},
+ {who:"Dr Watson",fr:"« Sept ! Et de nouveau en clientèle, je vois. Mais comment le savez-vous ? »",f:"c1_t3"},
+ {who:"Sherlock Holmes",fr:"« Je le vois, je le déduis. Un gentleman entre sentant l'iodoforme, une marque de nitrate d'argent sur l'index… »",f:"c1_t4"}
+];
+let mode=null,seqIdx=0;
+const exWho=document.getElementById("exWho"),exLine=document.getElementById("exLine"),extract=document.getElementById("extract");
+function stopAll(){au.pause();au.currentTime=0;mode=null;try{speechSynthesis.cancel();}catch(e){}document.querySelectorAll(".vcard").forEach(v=>v.classList.remove("playing"));}
+document.getElementById("extractBtn").addEventListener("click",()=>{
+  extract.hidden=false;
+  if(mode==="hero"){stopAll();return;}
+  stopAll();mode="hero";seqIdx=0;heroTurn();
+});
+document.getElementById("extractPlay").addEventListener("click",()=>{if(mode==="hero"){stopAll();}else{stopAll();mode="hero";seqIdx=0;heroTurn();}});
+function heroTurn(){
+  if(seqIdx>=HERO.length){stopAll();exWho.textContent="Et la scène continue…";return;}
+  const t=HERO[seqIdx];exWho.textContent=t.who;exLine.textContent=t.fr;
+  au.src=AUDIO_BASE+t.f+"_fr.mp3";au.play().catch(()=>{});
 }
 
-function playCard(i,el){
-  const c=CAST[i];
-  if(activeCard===el && !au.paused){stopAll();return;}
-  stopAll();
-  mode="card";activeCard=el;el.classList.add("active");
-  heroWho.textContent=c.nm;heroVoice.textContent="Voix · "+c.vc;heroLine.textContent=LANG==="fr"?c.fr:c.en;
-  au.src=url(c.f);au.play().then(()=>{setPlayingUI(true);}).catch(()=>{});
-}
-
-au.addEventListener("ended",()=>{
-  if(mode==="hero"){seqIdx++;playHeroTurn();}
-  else if(mode==="cmp"){document.querySelectorAll(".vcard").forEach(v=>v.classList.remove("playing"));mode=null;}
-  else{setPlayingUI(false);if(activeCard){activeCard.classList.remove("active");activeCard=null;}}
-});
-
-heroBtn.addEventListener("click",playHero);
-
-// langue
-document.querySelectorAll(".langtog button").forEach(b=>{
-  b.addEventListener("click",()=>{
-    LANG=b.dataset.lang;
-    document.querySelectorAll(".langtog button").forEach(x=>x.classList.toggle("on",x===b));
-    stopAll();
-    heroWho.textContent="Écoutez 20 secondes";
-    heroVoice.textContent="221B Baker Street · Holmes & Watson";
-    heroLine.textContent=LANG==="fr"?"« Le mariage vous sied, Watson… » — appuyez sur ▶ pour entrer dans la scène.":"“Wedlock suits you, Watson…” — press ▶ to step into the scene.";
-    renderCmpLine();
-  });
-});
-
-// casting cards
-const castEl=document.getElementById("cast");
-CAST.forEach((c,i)=>{
-  const d=document.createElement("div");d.className="card";
-  d.innerHTML='<div class="seal">'+c.mono+'</div><div class="nm">'+c.nm+'</div><div class="vc">Voix · '+c.vc+'</div>'+
-    '<div class="pl"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Écouter</div>';
-  d.addEventListener("click",()=>playCard(i,d));
-  castEl.appendChild(d);
-});
-
-// ---- comparateur de moteurs de voix ----
-const CMP_LINE={fr:"« C'est une erreur capitale que de théoriser avant d'avoir des données. »",en:"“It is a capital mistake to theorise before one has data.”"};
-const CMP_PLAIN={fr:"C'est une erreur capitale que de théoriser avant d'avoir des données.",en:"It is a capital mistake to theorise before one has data."};
-const cmpLineEl=document.getElementById("cmpLine");
-function renderCmpLine(){cmpLineEl.textContent=CMP_LINE[LANG];}
-renderCmpLine();
+/* --- comparateur de moteurs --- */
+const CMP_LINE="« C'est une erreur capitale que de théoriser avant d'avoir des données. »";
+const CMP_PLAIN="C'est une erreur capitale que de théoriser avant d'avoir des données.";
+document.getElementById("cmpLine").textContent=CMP_LINE;
 try{speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}catch(e){}
-function pickVoice(lang){const vs=(window.speechSynthesis&&speechSynthesis.getVoices())||[];const pre=lang==="fr"?"fr":"en";return vs.find(v=>v.lang&&v.lang.toLowerCase().startsWith(pre))||vs[0]||null;}
-function playNative(card){
-  stopAll();card.classList.add("playing");mode="cmp";
-  try{
-    const u=new SpeechSynthesisUtterance(CMP_PLAIN[LANG]);
-    const v=pickVoice(LANG);if(v){u.voice=v;u.lang=v.lang;}else u.lang=LANG==="fr"?"fr-FR":"en-US";
-    u.rate=1;u.onend=()=>{card.classList.remove("playing");if(mode==="cmp")mode=null;};
-    u.onerror=u.onend;
-    speechSynthesis.speak(u);
-  }catch(e){card.classList.remove("playing");}
-}
-function playCmpAsset(engine,card){
-  stopAll();card.classList.add("playing");mode="cmp";
-  au.src="audio/cmp_"+engine+"_"+LANG+".mp3";au.play().catch(()=>{card.classList.remove("playing");});
-}
+function pickVoice(){const vs=(window.speechSynthesis&&speechSynthesis.getVoices())||[];return vs.find(v=>v.lang&&v.lang.toLowerCase().startsWith("fr"))||vs[0]||null;}
+function playNative(card){stopAll();card.classList.add("playing");mode="cmp";
+  try{const u=new SpeechSynthesisUtterance(CMP_PLAIN);const v=pickVoice();if(v){u.voice=v;u.lang=v.lang;}else u.lang="fr-FR";u.onend=()=>{card.classList.remove("playing");if(mode==="cmp")mode=null;};u.onerror=u.onend;speechSynthesis.speak(u);}catch(e){card.classList.remove("playing");}}
+function playCmp(engine,card){stopAll();card.classList.add("playing");mode="cmp";au.src="audio/cmp_"+engine+"_fr.mp3";au.play().catch(()=>{card.classList.remove("playing");});}
 document.querySelectorAll(".vcard").forEach(card=>{
   const eng=card.dataset.engine;
-  card.querySelector(".vbtn").addEventListener("click",()=>{
-    if(card.classList.contains("playing")){stopAll();return;}
-    if(eng==="browser")playNative(card);else playCmpAsset(eng,card);
-  });
+  card.querySelector(".vbtn").addEventListener("click",()=>{if(card.classList.contains("playing")){stopAll();return;}if(eng==="browser")playNative(card);else playCmp(eng,card);});
 });
 
-// soulignement animé du héros
-requestAnimationFrame(()=>setTimeout(()=>document.querySelector(".hero").classList.add("lit"),150));
+au.addEventListener("ended",()=>{
+  if(mode==="hero"){seqIdx++;heroTurn();}
+  else if(mode==="cmp"){document.querySelectorAll(".vcard").forEach(v=>v.classList.remove("playing"));mode=null;}
+});
 
-// reveal au scroll
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12});
+/* --- soulignement héros + reveal --- */
+requestAnimationFrame(()=>setTimeout(()=>document.querySelector(".hero").classList.add("lit"),150));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.1});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 
-// boutons d'achat
-document.querySelectorAll("[data-buy]").forEach(a=>{
-  a.addEventListener("click",e=>{e.preventDefault();window.open(a.dataset.buy,"_blank","noopener");});
-});
+/* --- boutons d'achat --- */
+document.querySelectorAll("[data-buy]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();window.open(a.dataset.buy,"_blank","noopener");}));
 
-// compteur de visites (fire-and-forget, ne bloque jamais)
+/* --- CTA sticky mobile : apparaît dès qu'on scrolle un peu --- */
+const sticky=document.getElementById("stickyCta");
+function updSticky(){sticky.classList.toggle("show",window.scrollY>520);}
+window.addEventListener("scroll",updSticky,{passive:true});updSticky();
+
+/* --- compteur de visites (POST = incrémente) --- */
 try{fetch("https://api-gateway-pro.quang101182.workers.dev/api/visit?page=sv",{method:"POST",mode:"no-cors",keepalive:true}).catch(()=>{});}catch(e){}
-
 console.log("StoryVoice landing v"+VERSION);
 </script>
 </body>
