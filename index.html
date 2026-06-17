@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- StoryVoice — landing storiesvoice.org — direction « Ex Libris » (clair) — v1.0.0 -->
+<!-- StoryVoice — landing storiesvoice.org — direction « Ex Libris » (clair) — v1.0.1 -->
 <html lang="fr">
 <head>
 <meta charset="utf-8">
@@ -520,14 +520,14 @@ footer a:hover{color:var(--blood)}
   </div>
   <div class="wrap legal">
     <span>© 2026 StoryVoice — outil de lecture privée. Démo : <i>A Scandal in Bohemia</i>, A. C. Doyle (domaine public).</span>
-    <span>v1.0.0</span>
+    <span>v1.0.1</span>
   </div>
 </footer>
 
 <audio id="au" preload="none"></audio>
 
 <script>
-const VERSION="1.0.0";
+const VERSION="1.0.1";
 const AUDIO_BASE="https://quang101182.github.io/storyvoice/demo/audio/";
 let LANG="fr";
 
@@ -660,7 +660,7 @@ document.querySelectorAll("[data-buy]").forEach(a=>{
 });
 
 // compteur de visites (fire-and-forget, ne bloque jamais)
-try{fetch("https://api-gateway-pro.quang101182.workers.dev/api/visit?page=sv",{method:"GET",mode:"no-cors",keepalive:true}).catch(()=>{});}catch(e){}
+try{fetch("https://api-gateway-pro.quang101182.workers.dev/api/visit?page=sv",{method:"POST",mode:"no-cors",keepalive:true}).catch(()=>{});}catch(e){}
 
 console.log("StoryVoice landing v"+VERSION);
 </script>
