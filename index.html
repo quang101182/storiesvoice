@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<!-- StoryVoice — landing storiesvoice.org — « Ex Libris » — v1.1.0 (app-first : logo app, value prop claire, comment ça marche, captures app, CTA proéminent + sticky mobile, Sherlock = démo) -->
+<!-- StoryVoice — landing storiesvoice.org — « Ex Libris » — v1.2.0 (bilingue FR/EN : détection auto navigateur + bouton switch persistant, textes + audio héros/comparateur suivent la langue) -->
 <html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>StoryVoice — Vos livres, joués comme au théâtre</title>
-<meta name="description" content="StoryVoice transforme n'importe quel ebook en pièce de théâtre audio : il détecte chaque personnage, lui donne sa propre voix, et fait vivre la carte des personnages pendant que vous écoutez. Le cerveau (résumés, carte, Q&A) est gratuit ; les voix se règlent à la carte.">
+<meta name="description" id="metaDesc" content="StoryVoice transforme n'importe quel ebook en pièce de théâtre audio : il détecte chaque personnage, lui donne sa propre voix, et fait vivre la carte des personnages pendant que vous écoutez. Le cerveau (résumés, carte, Q&A) est gratuit ; les voix se règlent à la carte.">
 <link rel="canonical" href="https://storiesvoice.org/">
 <meta name="theme-color" content="#f5f3ec">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="StoryVoice">
-<meta property="og:title" content="StoryVoice — Vos livres, joués comme au théâtre">
-<meta property="og:description" content="Chargez un livre, StoryVoice détecte les personnages et donne à chacun sa propre voix. Écoutez l'histoire interprétée, pendant que la carte des personnages prend vie. Essai gratuit, sans compte.">
+<meta property="og:title" id="ogTitle" content="StoryVoice — Vos livres, joués comme au théâtre">
+<meta property="og:description" id="ogDesc" content="Chargez un livre, StoryVoice détecte les personnages et donne à chacun sa propre voix. Écoutez l'histoire interprétée, pendant que la carte des personnages prend vie. Essai gratuit, sans compte.">
 <meta property="og:url" content="https://storiesvoice.org/">
 <meta property="og:image" content="https://storiesvoice.org/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="fr_FR">
+<meta property="og:locale" id="ogLocale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="StoryVoice — Vos livres, joués comme au théâtre">
-<meta name="twitter:description" content="Une voix par personnage, une carte vivante, des résumés sans spoiler. Essai gratuit, sans compte.">
+<meta name="twitter:title" id="twTitle" content="StoryVoice — Vos livres, joués comme au théâtre">
+<meta name="twitter:description" id="twDesc" content="Une voix par personnage, une carte vivante, des résumés sans spoiler. Essai gratuit, sans compte.">
 <meta name="twitter:image" content="https://storiesvoice.org/og-image.png">
 
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -38,6 +39,7 @@
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Web, Android, iOS (PWA)",
   "url": "https://storiesvoice.org/",
+  "inLanguage": ["fr", "en"],
   "description": "Compagnon de lecture qui transforme un ebook en pièce de théâtre audio : détection des personnages, narration multi-voix (une voix par personnage), carte vivante des personnages, résumés et questions sans spoiler.",
   "offers": [
     {"@type": "Offer", "name": "La Place au Balcon", "price": "7.90", "priceCurrency": "EUR"},
@@ -76,6 +78,13 @@ a{color:inherit}
 .btn.ghost{border-color:var(--line);color:var(--ink-soft)}
 .btn.ghost:hover{background:var(--paper-deep);color:var(--ink)}
 
+/* sélecteur de langue */
+.langtog{display:inline-flex;border:1.5px solid var(--line);border-radius:3px;overflow:hidden;flex:none}
+.langtog button{border:0;background:transparent;color:var(--ink-soft);font-family:var(--sans);font-weight:700;font-size:.78rem;letter-spacing:.04em;padding:7px 11px;cursor:pointer;line-height:1;transition:.18s}
+.langtog button:hover{color:var(--blood)}
+.langtog button.on{background:var(--ink);color:var(--paper)}
+.langtog button.on:hover{color:var(--paper)}
+
 /* en-tête */
 header.bar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(120%) blur(7px);background:rgba(245,243,236,.86);border-bottom:1px solid var(--line)}
 .bar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:14px}
@@ -84,7 +93,8 @@ header.bar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(120%) blur(
 .bar nav{display:flex;align-items:center;gap:22px}
 .bar nav .navlink{font-size:.92rem;text-decoration:none;color:var(--ink-soft)}
 .bar nav .navlink:hover{color:var(--blood)}
-@media(max-width:760px){.bar nav .navlink{display:none}}
+@media(max-width:760px){.bar nav .navlink{display:none}.bar nav{gap:12px}}
+@media(max-width:430px){.bar .wrap{padding:0 14px;gap:8px}.brand{font-size:1.15rem;gap:7px}.brand img{width:28px;height:28px}.bar nav{gap:9px}.bar nav .btn.primary{padding:9px 13px;font-size:.85rem}.langtog button{padding:6px 9px;font-size:.74rem}}
 
 /* héros */
 .hero{padding:60px 0 30px}
@@ -218,10 +228,14 @@ footer a:hover{color:var(--blood)}
   <div class="wrap">
     <a class="brand" href="#top" style="text-decoration:none"><img src="assets/logo.png" alt="StoryVoice">StoryVoice</a>
     <nav>
-      <a class="navlink" href="#how">Comment ça marche</a>
-      <a class="navlink" href="#apercu">Aperçu</a>
-      <a class="navlink" href="#tarifs">Tarifs</a>
-      <a class="btn primary" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">Ouvrir l'app</a>
+      <a class="navlink" href="#how" data-i18n="nav.how">Comment ça marche</a>
+      <a class="navlink" href="#apercu" data-i18n="nav.apercu">Aperçu</a>
+      <a class="navlink" href="#tarifs" data-i18n="nav.tarifs">Tarifs</a>
+      <div class="langtog" role="group" aria-label="Langue / Language">
+        <button type="button" data-lang="fr">FR</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a class="btn primary" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener" data-i18n="nav.open">Ouvrir l'app</a>
     </nav>
   </div>
 </header>
@@ -230,18 +244,18 @@ footer a:hover{color:var(--blood)}
 <section class="hero" id="top">
   <div class="wrap grid">
     <div>
-      <p class="eyebrow">Compagnon de lecture · narration multi-voix</p>
-      <h1>Vos livres, joués <span class="u">comme au théâtre.</span></h1>
-      <p class="lede">Chargez un livre : StoryVoice détecte chaque personnage et lui donne <b>sa propre voix</b>. Vous écoutez l'histoire interprétée, pendant qu'une <b>carte vivante</b> des personnages se révèle — sans spoiler.</p>
+      <p class="eyebrow" data-i18n="hero.eyebrow">Compagnon de lecture · narration multi-voix</p>
+      <h1 data-i18n="hero.h1">Vos livres, joués <span class="u">comme au théâtre.</span></h1>
+      <p class="lede" data-i18n="hero.lede">Chargez un livre : StoryVoice détecte chaque personnage et lui donne <b>sa propre voix</b>. Vous écoutez l'histoire interprétée, pendant qu'une <b>carte vivante</b> des personnages se révèle — sans spoiler.</p>
       <div class="cta">
-        <a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">✨ Essayer gratuitement</a>
-        <button class="btn ghost lg" id="extractBtn" type="button">▶ Écouter un extrait</button>
+        <a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener" data-i18n="hero.try">✨ Essayer gratuitement</a>
+        <button class="btn ghost lg" id="extractBtn" type="button" data-i18n="hero.listen">▶ Écouter un extrait</button>
       </div>
       <div class="extract" id="extract" hidden>
-        <button class="pb" id="extractPlay" aria-label="Lecture"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
-        <div class="x"><div class="t" id="exWho">Extrait · narration multi-voix</div><div class="l" id="exLine">« Le mariage vous sied, Watson… »</div></div>
+        <button class="pb" id="extractPlay" data-i18n-aria="aria.play" aria-label="Lecture"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="x"><div class="t" id="exWho" data-i18n="hero.exWho">Extrait · narration multi-voix</div><div class="l" id="exLine" data-i18n="hero.exLine">« Le mariage vous sied, Watson… »</div></div>
       </div>
-      <p class="model"><span class="free">Cerveau gratuit</span> — résumés, carte des personnages, questions sans spoiler. Les <b>voix</b> se règlent à la carte, sans abonnement.</p>
+      <p class="model" data-i18n="hero.model"><span class="free">Cerveau gratuit</span> — résumés, carte des personnages, questions sans spoiler. Les <b>voix</b> se règlent à la carte, sans abonnement.</p>
     </div>
     <div class="shot-wrap">
       <div class="phone"><img src="screens/map.png" alt="StoryVoice — carte vivante des personnages (constellation)"></div>
@@ -251,131 +265,272 @@ footer a:hover{color:var(--blood)}
 
 <!-- ============ COMMENT ÇA MARCHE ============ -->
 <div class="chapter" id="how">
-  <span class="rule"></span><span class="ex"><span class="num">En bref</span><div class="ti">Comment ça marche</div><span class="seal">❦</span></span><span class="rule"></span>
+  <span class="rule"></span><span class="ex"><span class="num" data-i18n="how.num">En bref</span><div class="ti" data-i18n="how.ti">Comment ça marche</div><span class="seal">❦</span></span><span class="rule"></span>
 </div>
 <section><div class="wrap reveal">
-  <p class="section-lede">Un livre entre. Une pièce de théâtre audio en sort. En quatre temps.</p>
+  <p class="section-lede" data-i18n="how.lede">Un livre entre. Une pièce de théâtre audio en sort. En quatre temps.</p>
   <div class="steps">
-    <div class="step"><div class="n">1</div><div class="ic">📖</div><h4>Chargez un livre</h4><p>EPUB, PDF ou TXT — le fichier reste sur votre appareil, jamais sur nos serveurs.</p></div>
-    <div class="step"><div class="n">2</div><div class="ic">🔍</div><h4>L'IA le scanne</h4><p>StoryVoice détecte et trie les personnages, les lieux et leurs relations, et rédige des résumés.</p></div>
-    <div class="step"><div class="n">3</div><div class="ic">🎭</div><h4>Une voix par personnage</h4><p>Chaque personnage reçoit une voix distincte. La narration devient une vraie distribution.</p></div>
-    <div class="step"><div class="n">4</div><div class="ic">✦</div><h4>La carte prend vie</h4><p>La constellation des personnages se révèle au fil de votre lecture — sans jamais vous spoiler.</p></div>
+    <div class="step"><div class="n">1</div><div class="ic">📖</div><h4 data-i18n="step1.h">Chargez un livre</h4><p data-i18n="step1.p">EPUB, PDF ou TXT — le fichier reste sur votre appareil, jamais sur nos serveurs.</p></div>
+    <div class="step"><div class="n">2</div><div class="ic">🔍</div><h4 data-i18n="step2.h">L'IA le scanne</h4><p data-i18n="step2.p">StoryVoice détecte et trie les personnages, les lieux et leurs relations, et rédige des résumés.</p></div>
+    <div class="step"><div class="n">3</div><div class="ic">🎭</div><h4 data-i18n="step3.h">Une voix par personnage</h4><p data-i18n="step3.p">Chaque personnage reçoit une voix distincte. La narration devient une vraie distribution.</p></div>
+    <div class="step"><div class="n">4</div><div class="ic">✦</div><h4 data-i18n="step4.h">La carte prend vie</h4><p data-i18n="step4.p">La constellation des personnages se révèle au fil de votre lecture — sans jamais vous spoiler.</p></div>
   </div>
 </div></section>
 
 <!-- ============ APERÇU (captures app) ============ -->
 <div class="chapter" id="apercu">
-  <span class="rule"></span><span class="ex"><span class="num">Dans l'application</span><div class="ti">Aperçu</div><span class="seal">❦</span></span><span class="rule"></span>
+  <span class="rule"></span><span class="ex"><span class="num" data-i18n="ap.num">Dans l'application</span><div class="ti" data-i18n="ap.ti">Aperçu</div><span class="seal">❦</span></span><span class="rule"></span>
 </div>
 <section><div class="wrap reveal">
-  <p class="section-lede">L'application, en vrai. PC et mobile, installable, gratuite à l'essai.</p>
+  <p class="section-lede" data-i18n="ap.lede">L'application, en vrai. PC et mobile, installable, gratuite à l'essai.</p>
   <div class="gallery">
-    <div class="gcard"><div class="phone"><img src="screens/map.png" alt="Carte vivante des personnages"></div><div class="cap">La carte vivante</div><div class="sub">Personnages, lieux et liens en constellation.</div></div>
-    <div class="gcard"><div class="phone"><img src="screens/listen.png" alt="Narration multi-voix"></div><div class="cap">La narration multi-voix</div><div class="sub">Chaque réplique, jouée par sa voix.</div></div>
-    <div class="gcard"><div class="phone"><img src="screens/home.png" alt="Accueil — résumés et carte"></div><div class="cap">Le cerveau, gratuit</div><div class="sub">Résumés à la carte, exploration sans spoiler.</div></div>
+    <div class="gcard"><div class="phone"><img src="screens/map.png" alt="Carte vivante des personnages"></div><div class="cap" data-i18n="g1.cap">La carte vivante</div><div class="sub" data-i18n="g1.sub">Personnages, lieux et liens en constellation.</div></div>
+    <div class="gcard"><div class="phone"><img src="screens/listen.png" alt="Narration multi-voix"></div><div class="cap" data-i18n="g2.cap">La narration multi-voix</div><div class="sub" data-i18n="g2.sub">Chaque réplique, jouée par sa voix.</div></div>
+    <div class="gcard"><div class="phone"><img src="screens/home.png" alt="Accueil — résumés et carte"></div><div class="cap" data-i18n="g3.cap">Le cerveau, gratuit</div><div class="sub" data-i18n="g3.sub">Résumés à la carte, exploration sans spoiler.</div></div>
   </div>
-  <div style="text-align:center;margin-top:30px"><a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">✨ Essayer maintenant — gratuit</a></div>
+  <div style="text-align:center;margin-top:30px"><a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener" data-i18n="ap.cta">✨ Essayer maintenant — gratuit</a></div>
 </div></section>
 
 <!-- ============ L'ÉPREUVE DES VOIX (comparateur) ============ -->
 <div class="chapter">
-  <span class="rule"></span><span class="ex"><span class="num">La qualité des voix</span><div class="ti">L'Épreuve des Voix</div><span class="seal">❦</span></span><span class="rule"></span>
+  <span class="rule"></span><span class="ex"><span class="num" data-i18n="vx.num">La qualité des voix</span><div class="ti" data-i18n="vx.ti">L'Épreuve des Voix</div><span class="seal">❦</span></span><span class="rule"></span>
 </div>
 <section id="voix"><div class="wrap reveal" style="text-align:center">
-  <p class="section-lede">La même réplique, trois moteurs. À vous de juger — l'oreille décide.</p>
+  <p class="section-lede" data-i18n="vx.lede">La même réplique, trois moteurs. À vous de juger — l'oreille décide.</p>
   <p class="vtest-line" id="cmpLine"></p>
   <div class="vtest" id="vtest">
-    <div class="vcard" data-engine="browser"><div class="tier free">Gratuit · instantané</div><div class="eng serif">Votre navigateur</div><div class="sub">La voix intégrée à votre appareil. Sans coût, mais plate et mécanique.</div><button class="vbtn" aria-label="Écouter le navigateur"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars">★<span style="opacity:.3">★★★</span></div></div>
-    <div class="vcard premium" data-engine="openai"><div class="tier prem">Premium</div><div class="eng serif">OpenAI</div><div class="sub">La voix par défaut de StoryVoice. Du souffle, de l'intention, un vrai jeu d'acteur.</div><button class="vbtn" aria-label="Écouter OpenAI"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars"><b>★★★★</b><span style="opacity:.3">★</span></div></div>
-    <div class="vcard premium" data-engine="gemini"><div class="tier prem">Premium ✨</div><div class="eng serif">Gemini</div><div class="sub">Un autre timbre premium, signé Google. Chaud, posé — à comparer selon votre goût.</div><button class="vbtn" aria-label="Écouter Gemini"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars"><b>★★★★</b><span style="opacity:.3">★</span></div></div>
+    <div class="vcard" data-engine="browser"><div class="tier free" data-i18n="v.browser.tier">Gratuit · instantané</div><div class="eng serif" data-i18n="v.browser.eng">Votre navigateur</div><div class="sub" data-i18n="v.browser.sub">La voix intégrée à votre appareil. Sans coût, mais plate et mécanique.</div><button class="vbtn" data-i18n-aria="aria.listenBrowser" aria-label="Écouter le navigateur"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars">★<span style="opacity:.3">★★★</span></div></div>
+    <div class="vcard premium" data-engine="openai"><div class="tier prem">Premium</div><div class="eng serif">OpenAI</div><div class="sub" data-i18n="v.openai.sub">La voix par défaut de StoryVoice. Du souffle, de l'intention, un vrai jeu d'acteur.</div><button class="vbtn" data-i18n-aria="aria.listenOpenai" aria-label="Écouter OpenAI"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars"><b>★★★★</b><span style="opacity:.3">★</span></div></div>
+    <div class="vcard premium" data-engine="gemini"><div class="tier prem">Premium ✨</div><div class="eng serif">Gemini</div><div class="sub" data-i18n="v.gemini.sub">Un autre timbre premium, signé Google. Chaud, posé — à comparer selon votre goût.</div><button class="vbtn" data-i18n-aria="aria.listenGemini" aria-label="Écouter Gemini"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars"><b>★★★★</b><span style="opacity:.3">★</span></div></div>
   </div>
-  <p class="vnote">Les voix premium ne sont pas gratuites — c'est pourquoi StoryVoice les propose au comptant, sans abonnement. Le navigateur, lui, reste toujours disponible sans payer.</p>
+  <p class="vnote" data-i18n="vx.note">Les voix premium ne sont pas gratuites — c'est pourquoi StoryVoice les propose au comptant, sans abonnement. Le navigateur, lui, reste toujours disponible sans payer.</p>
 </div></section>
 
 <!-- ============ LA DÉMO (Sherlock = exemple domaine public) ============ -->
 <div class="chapter">
-  <span class="rule"></span><span class="ex"><span class="num">Essai sans compte</span><div class="ti">La Démo</div><span class="seal">❦</span></span><span class="rule"></span>
+  <span class="rule"></span><span class="ex"><span class="num" data-i18n="d.num">Essai sans compte</span><div class="ti" data-i18n="d.ti">La Démo</div><span class="seal">❦</span></span><span class="rule"></span>
 </div>
 <section id="demo"><div class="wrap reveal">
   <div class="demo">
     <div>
-      <p class="eyebrow">Jouable tout de suite · sans inscription</p>
-      <h3 class="serif">Essayez sur un classique du domaine public.</h3>
+      <p class="eyebrow" data-i18n="d.eyebrow">Jouable tout de suite · sans inscription</p>
+      <h3 class="serif" data-i18n="d.h">Essayez sur un classique du domaine public.</h3>
       <ul>
-        <li><span class="m">❦</span><span>Notre démo charge <b>« Un scandale en Bohême »</b> (Conan Doyle) : cinq personnages, cinq voix.</span></li>
-        <li><span class="m">❦</span><span>Vous voyez la <b>carte vivante</b> se dessiner et entendez la <b>narration multi-voix</b>.</span></li>
-        <li><span class="m">❦</span><span>Pour lire <b>vos</b> livres, il suffira ensuite de crédits de voix.</span></li>
+        <li><span class="m">❦</span><span data-i18n="d.li1">Notre démo charge <b>« Un scandale en Bohême »</b> (Conan Doyle) : cinq personnages, cinq voix.</span></li>
+        <li><span class="m">❦</span><span data-i18n="d.li2">Vous voyez la <b>carte vivante</b> se dessiner et entendez la <b>narration multi-voix</b>.</span></li>
+        <li><span class="m">❦</span><span data-i18n="d.li3">Pour lire <b>vos</b> livres, il suffira ensuite de crédits de voix.</span></li>
       </ul>
     </div>
     <div style="text-align:center">
-      <a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:2px"><path d="M8 5v14l11-7z"/></svg>Lancer la démo</a>
-      <p style="margin-top:12px;font-family:var(--serif);font-style:italic;color:var(--ink-soft)">Ouvre StoryVoice dans un nouvel onglet.</p>
+      <a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:2px"><path d="M8 5v14l11-7z"/></svg><span data-i18n="d.launch">Lancer la démo</span></a>
+      <p style="margin-top:12px;font-family:var(--serif);font-style:italic;color:var(--ink-soft)" data-i18n="d.note">Ouvre StoryVoice dans un nouvel onglet.</p>
     </div>
   </div>
 </div></section>
 
 <!-- ============ BILLETTERIE ============ -->
 <div class="chapter" id="tarifs">
-  <span class="rule"></span><span class="ex"><span class="num">Les voix, à la carte</span><div class="ti">La Billetterie</div><span class="seal">❦</span></span><span class="rule"></span>
+  <span class="rule"></span><span class="ex"><span class="num" data-i18n="t.num">Les voix, à la carte</span><div class="ti" data-i18n="t.ti">La Billetterie</div><span class="seal">❦</span></span><span class="rule"></span>
 </div>
 <section><div class="wrap reveal">
-  <p class="section-lede">Le cerveau est gratuit. Vous ne payez que la voix — au comptant, jamais d'abonnement.</p>
+  <p class="section-lede" data-i18n="t.lede">Le cerveau est gratuit. Vous ne payez que la voix — au comptant, jamais d'abonnement.</p>
   <div class="tickets">
-    <div class="ticket"><div class="name serif">La Place au Balcon</div><div class="price">7,90 €</div><div class="hours">≈ 3 h 20 de narration</div><div class="desc">Pour goûter l'expérience sur un premier livre. 300 000 crédits de voix, valables 12 mois.</div><a class="btn ghost" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/832792f9-c1f3-4e0f-bd09-8b5bdde22a2d" href="#">Prendre ma place</a></div>
-    <div class="ticket feature"><span class="tag">Le plus choisi</span><div class="name serif">L'Orchestre</div><div class="price">24,90 €</div><div class="hours">≈ 11 h de narration</div><div class="desc">Le bon équilibre : de quoi écouter plusieurs romans en entier. 1 000 000 de crédits, valables 12 mois.</div><a class="btn primary" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/ec19abce-6abe-4fd4-a6d4-c2be0694aa99" href="#">Prendre ma place</a></div>
-    <div class="ticket"><div class="name serif">La Loge</div><div class="price">64,90 €</div><div class="hours">≈ 33 h de narration</div><div class="desc">Pour les grands lecteurs. 3 000 000 de crédits, le meilleur tarif à l'heure, valables 12 mois.</div><a class="btn ghost" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/abd00154-2da2-4f69-8044-2f4b46723de6" href="#">Prendre ma place</a></div>
+    <div class="ticket"><div class="name serif" data-i18n="t1.name">La Place au Balcon</div><div class="price" data-i18n="t1.price">7,90 €</div><div class="hours" data-i18n="t1.hours">≈ 3 h 20 de narration</div><div class="desc" data-i18n="t1.desc">Pour goûter l'expérience sur un premier livre. 300 000 crédits de voix, valables 12 mois.</div><a class="btn ghost" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/832792f9-c1f3-4e0f-bd09-8b5bdde22a2d" href="#" data-i18n="t.buy">Prendre ma place</a></div>
+    <div class="ticket feature"><span class="tag" data-i18n="t2.tag">Le plus choisi</span><div class="name serif" data-i18n="t2.name">L'Orchestre</div><div class="price" data-i18n="t2.price">24,90 €</div><div class="hours" data-i18n="t2.hours">≈ 11 h de narration</div><div class="desc" data-i18n="t2.desc">Le bon équilibre : de quoi écouter plusieurs romans en entier. 1 000 000 de crédits, valables 12 mois.</div><a class="btn primary" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/ec19abce-6abe-4fd4-a6d4-c2be0694aa99" href="#" data-i18n="t.buy">Prendre ma place</a></div>
+    <div class="ticket"><div class="name serif" data-i18n="t3.name">La Loge</div><div class="price" data-i18n="t3.price">64,90 €</div><div class="hours" data-i18n="t3.hours">≈ 33 h de narration</div><div class="desc" data-i18n="t3.desc">Pour les grands lecteurs. 3 000 000 de crédits, le meilleur tarif à l'heure, valables 12 mois.</div><a class="btn ghost" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/abd00154-2da2-4f69-8044-2f4b46723de6" href="#" data-i18n="t.buy">Prendre ma place</a></div>
   </div>
-  <p class="note-free">Lire avec la carte et les résumés ? <b>0 €.</b> Toujours.</p>
-  <p class="subnote">Paiement sécurisé par LemonSqueezy. Après l'achat, votre code d'accès arrive par e-mail, avec les instructions.</p>
+  <p class="note-free" data-i18n="t.free">Lire avec la carte et les résumés ? <b>0 €.</b> Toujours.</p>
+  <p class="subnote" data-i18n="t.subnote">Paiement sécurisé par LemonSqueezy. Après l'achat, votre code d'accès arrive par e-mail, avec les instructions.</p>
 </div></section>
 
 <!-- ============ FAQ ============ -->
 <div class="chapter">
-  <span class="rule"></span><span class="ex"><span class="num">Le Programme</span><div class="ti">Questions</div><span class="seal">❦</span></span><span class="rule"></span>
+  <span class="rule"></span><span class="ex"><span class="num" data-i18n="f.num">Le Programme</span><div class="ti" data-i18n="f.ti">Questions</div><span class="seal">❦</span></span><span class="rule"></span>
 </div>
 <section id="faq"><div class="wrap reveal">
   <div class="faq">
-    <details class="qa"><summary>Concrètement, qu'est-ce que StoryVoice fait ? <span class="pm">+</span></summary><div class="a">Vous chargez un ebook. StoryVoice l'analyse : il détecte les personnages, les lieux et leurs relations, rédige des résumés, et peut narrer le texte avec une <b>voix différente par personnage</b>. Le tout dans une seule application web (installable sur PC et mobile).</div></details>
-    <details class="qa"><summary>Mes ebooks personnels sont-ils privés ? <span class="pm">+</span></summary><div class="a">Oui. Vos fichiers restent dans votre navigateur et ne sont jamais envoyés sur nos serveurs. Seules les voix sont synthétisées à distance, à partir du texte lu.</div></details>
-    <details class="qa"><summary>C'est gratuit ou payant ? <span class="pm">+</span></summary><div class="a">La lecture augmentée — résumés, carte des personnages, questions sans spoiler — est <b>gratuite</b>. Seule la narration vocale premium se règle, via des crédits de voix (sans abonnement).</div></details>
-    <details class="qa"><summary>J'ai déjà acheté un code — où je le colle ? <span class="pm">+</span></summary><div class="a">Ouvrez l'application, puis <code>⚙ Réglages → Code d'accès</code> et collez le code reçu par e-mail (il commence par <code>sv_</code>). Un souci ? Écrivez à quangapps.dev@gmail.com.</div></details>
+    <details class="qa"><summary><span data-i18n="q1.q">Concrètement, qu'est-ce que StoryVoice fait ?</span> <span class="pm">+</span></summary><div class="a" data-i18n="q1.a">Vous chargez un ebook. StoryVoice l'analyse : il détecte les personnages, les lieux et leurs relations, rédige des résumés, et peut narrer le texte avec une <b>voix différente par personnage</b>. Le tout dans une seule application web (installable sur PC et mobile).</div></details>
+    <details class="qa"><summary><span data-i18n="q2.q">Mes ebooks personnels sont-ils privés ?</span> <span class="pm">+</span></summary><div class="a" data-i18n="q2.a">Oui. Vos fichiers restent dans votre navigateur et ne sont jamais envoyés sur nos serveurs. Seules les voix sont synthétisées à distance, à partir du texte lu.</div></details>
+    <details class="qa"><summary><span data-i18n="q3.q">C'est gratuit ou payant ?</span> <span class="pm">+</span></summary><div class="a" data-i18n="q3.a">La lecture augmentée — résumés, carte des personnages, questions sans spoiler — est <b>gratuite</b>. Seule la narration vocale premium se règle, via des crédits de voix (sans abonnement).</div></details>
+    <details class="qa"><summary><span data-i18n="q4.q">J'ai déjà acheté un code — où je le colle ?</span> <span class="pm">+</span></summary><div class="a" data-i18n="q4.a">Ouvrez l'application, puis <code>⚙ Réglages → Code d'accès</code> et collez le code reçu par e-mail (il commence par <code>sv_</code>). Un souci ? Écrivez à quangapps.dev@gmail.com.</div></details>
   </div>
-  <div style="text-align:center;margin-top:32px"><a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">✨ Essayer StoryVoice gratuitement</a></div>
+  <div style="text-align:center;margin-top:32px"><a class="btn primary lg" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener" data-i18n="faq.cta">✨ Essayer StoryVoice gratuitement</a></div>
 </div></section>
 
 <footer>
   <div class="wrap">
     <div>
       <a class="brand" href="#top" style="text-decoration:none;font-size:1.3rem"><img src="assets/logo.png" alt="StoryVoice">StoryVoice</a>
-      <p style="margin-top:10px;color:var(--ink-soft);max-width:25em;font-family:var(--serif);font-style:italic">Vos livres, joués comme au théâtre.</p>
+      <p style="margin-top:10px;color:var(--ink-soft);max-width:25em;font-family:var(--serif);font-style:italic" data-i18n="foot.tagline">Vos livres, joués comme au théâtre.</p>
     </div>
-    <div class="col"><h5>L'application</h5><a href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">Ouvrir l'app</a><a href="#how">Comment ça marche</a><a href="#tarifs">Tarifs</a></div>
-    <div class="col"><h5>Contact</h5><a href="mailto:quangapps.dev@gmail.com">quangapps.dev@gmail.com</a><a href="#faq">Questions fréquentes</a></div>
+    <div class="col"><h5 data-i18n="foot.col1">L'application</h5><a href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener" data-i18n="foot.open">Ouvrir l'app</a><a href="#how" data-i18n="foot.how">Comment ça marche</a><a href="#tarifs" data-i18n="foot.tarifs">Tarifs</a></div>
+    <div class="col"><h5 data-i18n="foot.col2">Contact</h5><a href="mailto:quangapps.dev@gmail.com">quangapps.dev@gmail.com</a><a href="#faq" data-i18n="foot.faq">Questions fréquentes</a></div>
   </div>
-  <div class="wrap legal"><span>© 2026 StoryVoice — outil de lecture privée. Démo : <i>A Scandal in Bohemia</i>, A. C. Doyle (domaine public).</span><span>v1.1.0</span></div>
+  <div class="wrap legal"><span data-i18n="foot.legal">© 2026 StoryVoice — outil de lecture privée. Démo : <i>A Scandal in Bohemia</i>, A. C. Doyle (domaine public).</span><span>v1.2.0</span></div>
 </footer>
 
 <!-- CTA sticky mobile -->
 <div class="sticky-cta" id="stickyCta">
-  <a class="btn primary" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener">✨ Essayer gratuitement</a>
+  <a class="btn primary" href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener" data-i18n="sticky.try">✨ Essayer gratuitement</a>
 </div>
 
 <audio id="au" preload="none"></audio>
 
 <script>
-const VERSION="1.1.0";
+const VERSION="1.2.0";
 const AUDIO_BASE="https://quang101182.github.io/storyvoice/demo/audio/";
-let LANG="fr";
 const au=document.getElementById("au");
 
-/* --- extrait héros (Holmes↔Watson) --- */
+/* ============ DICTIONNAIRE FR / EN ============ */
+const I18N={
+ fr:{
+  "doc.title":"StoryVoice — Vos livres, joués comme au théâtre",
+  "meta.desc":"StoryVoice transforme n'importe quel ebook en pièce de théâtre audio : il détecte chaque personnage, lui donne sa propre voix, et fait vivre la carte des personnages pendant que vous écoutez. Le cerveau (résumés, carte, Q&A) est gratuit ; les voix se règlent à la carte.",
+  "og.desc":"Chargez un livre, StoryVoice détecte les personnages et donne à chacun sa propre voix. Écoutez l'histoire interprétée, pendant que la carte des personnages prend vie. Essai gratuit, sans compte.",
+  "tw.desc":"Une voix par personnage, une carte vivante, des résumés sans spoiler. Essai gratuit, sans compte.",
+  "nav.how":"Comment ça marche","nav.apercu":"Aperçu","nav.tarifs":"Tarifs","nav.open":"Ouvrir l'app",
+  "hero.eyebrow":"Compagnon de lecture · narration multi-voix",
+  "hero.h1":"Vos livres, joués <span class=\"u\">comme au théâtre.</span>",
+  "hero.lede":"Chargez un livre : StoryVoice détecte chaque personnage et lui donne <b>sa propre voix</b>. Vous écoutez l'histoire interprétée, pendant qu'une <b>carte vivante</b> des personnages se révèle — sans spoiler.",
+  "hero.try":"✨ Essayer gratuitement","hero.listen":"▶ Écouter un extrait",
+  "hero.exWho":"Extrait · narration multi-voix","hero.exLine":"« Le mariage vous sied, Watson… »",
+  "hero.model":"<span class=\"free\">Cerveau gratuit</span> — résumés, carte des personnages, questions sans spoiler. Les <b>voix</b> se règlent à la carte, sans abonnement.",
+  "how.num":"En bref","how.ti":"Comment ça marche","how.lede":"Un livre entre. Une pièce de théâtre audio en sort. En quatre temps.",
+  "step1.h":"Chargez un livre","step1.p":"EPUB, PDF ou TXT — le fichier reste sur votre appareil, jamais sur nos serveurs.",
+  "step2.h":"L'IA le scanne","step2.p":"StoryVoice détecte et trie les personnages, les lieux et leurs relations, et rédige des résumés.",
+  "step3.h":"Une voix par personnage","step3.p":"Chaque personnage reçoit une voix distincte. La narration devient une vraie distribution.",
+  "step4.h":"La carte prend vie","step4.p":"La constellation des personnages se révèle au fil de votre lecture — sans jamais vous spoiler.",
+  "ap.num":"Dans l'application","ap.ti":"Aperçu","ap.lede":"L'application, en vrai. PC et mobile, installable, gratuite à l'essai.",
+  "g1.cap":"La carte vivante","g1.sub":"Personnages, lieux et liens en constellation.",
+  "g2.cap":"La narration multi-voix","g2.sub":"Chaque réplique, jouée par sa voix.",
+  "g3.cap":"Le cerveau, gratuit","g3.sub":"Résumés à la carte, exploration sans spoiler.",
+  "ap.cta":"✨ Essayer maintenant — gratuit",
+  "vx.num":"La qualité des voix","vx.ti":"L'Épreuve des Voix","vx.lede":"La même réplique, trois moteurs. À vous de juger — l'oreille décide.",
+  "v.browser.tier":"Gratuit · instantané","v.browser.eng":"Votre navigateur","v.browser.sub":"La voix intégrée à votre appareil. Sans coût, mais plate et mécanique.",
+  "v.openai.sub":"La voix par défaut de StoryVoice. Du souffle, de l'intention, un vrai jeu d'acteur.",
+  "v.gemini.sub":"Un autre timbre premium, signé Google. Chaud, posé — à comparer selon votre goût.",
+  "vx.note":"Les voix premium ne sont pas gratuites — c'est pourquoi StoryVoice les propose au comptant, sans abonnement. Le navigateur, lui, reste toujours disponible sans payer.",
+  "d.num":"Essai sans compte","d.ti":"La Démo","d.eyebrow":"Jouable tout de suite · sans inscription","d.h":"Essayez sur un classique du domaine public.",
+  "d.li1":"Notre démo charge <b>« Un scandale en Bohême »</b> (Conan Doyle) : cinq personnages, cinq voix.",
+  "d.li2":"Vous voyez la <b>carte vivante</b> se dessiner et entendez la <b>narration multi-voix</b>.",
+  "d.li3":"Pour lire <b>vos</b> livres, il suffira ensuite de crédits de voix.",
+  "d.launch":"Lancer la démo","d.note":"Ouvre StoryVoice dans un nouvel onglet.",
+  "t.num":"Les voix, à la carte","t.ti":"La Billetterie","t.lede":"Le cerveau est gratuit. Vous ne payez que la voix — au comptant, jamais d'abonnement.",
+  "t1.name":"La Place au Balcon","t1.price":"7,90 €","t1.hours":"≈ 3 h 20 de narration","t1.desc":"Pour goûter l'expérience sur un premier livre. 300 000 crédits de voix, valables 12 mois.",
+  "t2.tag":"Le plus choisi","t2.name":"L'Orchestre","t2.price":"24,90 €","t2.hours":"≈ 11 h de narration","t2.desc":"Le bon équilibre : de quoi écouter plusieurs romans en entier. 1 000 000 de crédits, valables 12 mois.",
+  "t3.name":"La Loge","t3.price":"64,90 €","t3.hours":"≈ 33 h de narration","t3.desc":"Pour les grands lecteurs. 3 000 000 de crédits, le meilleur tarif à l'heure, valables 12 mois.",
+  "t.buy":"Prendre ma place","t.free":"Lire avec la carte et les résumés ? <b>0 €.</b> Toujours.",
+  "t.subnote":"Paiement sécurisé par LemonSqueezy. Après l'achat, votre code d'accès arrive par e-mail, avec les instructions.",
+  "f.num":"Le Programme","f.ti":"Questions",
+  "q1.q":"Concrètement, qu'est-ce que StoryVoice fait ?",
+  "q1.a":"Vous chargez un ebook. StoryVoice l'analyse : il détecte les personnages, les lieux et leurs relations, rédige des résumés, et peut narrer le texte avec une <b>voix différente par personnage</b>. Le tout dans une seule application web (installable sur PC et mobile).",
+  "q2.q":"Mes ebooks personnels sont-ils privés ?",
+  "q2.a":"Oui. Vos fichiers restent dans votre navigateur et ne sont jamais envoyés sur nos serveurs. Seules les voix sont synthétisées à distance, à partir du texte lu.",
+  "q3.q":"C'est gratuit ou payant ?",
+  "q3.a":"La lecture augmentée — résumés, carte des personnages, questions sans spoiler — est <b>gratuite</b>. Seule la narration vocale premium se règle, via des crédits de voix (sans abonnement).",
+  "q4.q":"J'ai déjà acheté un code — où je le colle ?",
+  "q4.a":"Ouvrez l'application, puis <code>⚙ Réglages → Code d'accès</code> et collez le code reçu par e-mail (il commence par <code>sv_</code>). Un souci ? Écrivez à quangapps.dev@gmail.com.",
+  "faq.cta":"✨ Essayer StoryVoice gratuitement",
+  "foot.tagline":"Vos livres, joués comme au théâtre.","foot.col1":"L'application","foot.open":"Ouvrir l'app","foot.how":"Comment ça marche","foot.tarifs":"Tarifs","foot.col2":"Contact","foot.faq":"Questions fréquentes",
+  "foot.legal":"© 2026 StoryVoice — outil de lecture privée. Démo : <i>A Scandal in Bohemia</i>, A. C. Doyle (domaine public).",
+  "sticky.try":"✨ Essayer gratuitement",
+  "aria.play":"Lecture","aria.listenBrowser":"Écouter le navigateur","aria.listenOpenai":"Écouter OpenAI","aria.listenGemini":"Écouter Gemini"
+ },
+ en:{
+  "doc.title":"StoryVoice — Your books, performed like theatre",
+  "meta.desc":"StoryVoice turns any ebook into an audio play: it detects every character, gives each their own voice, and brings the character map to life as you listen. The brain (summaries, map, Q&A) is free; the voices are pay-as-you-go.",
+  "og.desc":"Load a book and StoryVoice detects the characters, giving each their own voice. Listen to the story performed, while the character map comes alive. Free trial, no account.",
+  "tw.desc":"One voice per character, a living map, spoiler-free summaries. Free trial, no account.",
+  "nav.how":"How it works","nav.apercu":"Preview","nav.tarifs":"Pricing","nav.open":"Open the app",
+  "hero.eyebrow":"Reading companion · multi-voice narration",
+  "hero.h1":"Your books, performed <span class=\"u\">like theatre.</span>",
+  "hero.lede":"Load a book: StoryVoice detects every character and gives each <b>their own voice</b>. You listen to the story performed, while a <b>living map</b> of the characters unfolds — spoiler-free.",
+  "hero.try":"✨ Try it free","hero.listen":"▶ Hear a sample",
+  "hero.exWho":"Sample · multi-voice narration","hero.exLine":"“Wedlock suits you, Watson…”",
+  "hero.model":"<span class=\"free\">Free brain</span> — summaries, character map, spoiler-free Q&A. The <b>voices</b> are pay-as-you-go, no subscription.",
+  "how.num":"In brief","how.ti":"How it works","how.lede":"A book goes in. An audio play comes out. In four steps.",
+  "step1.h":"Load a book","step1.p":"EPUB, PDF or TXT — the file stays on your device, never on our servers.",
+  "step2.h":"The AI scans it","step2.p":"StoryVoice detects and sorts the characters, places and their relationships, and writes summaries.",
+  "step3.h":"One voice per character","step3.p":"Each character gets a distinct voice. The narration becomes a real cast.",
+  "step4.h":"The map comes alive","step4.p":"The character constellation reveals itself as you read — without ever spoiling.",
+  "ap.num":"Inside the app","ap.ti":"Preview","ap.lede":"The real app. Desktop and mobile, installable, free to try.",
+  "g1.cap":"The living map","g1.sub":"Characters, places and links in a constellation.",
+  "g2.cap":"Multi-voice narration","g2.sub":"Every line, played by its own voice.",
+  "g3.cap":"The brain, free","g3.sub":"Summaries on demand, spoiler-free exploration.",
+  "ap.cta":"✨ Try it now — free",
+  "vx.num":"Voice quality","vx.ti":"The Trial of Voices","vx.lede":"The same line, three engines. You be the judge — the ear decides.",
+  "v.browser.tier":"Free · instant","v.browser.eng":"Your browser","v.browser.sub":"The voice built into your device. Free, but flat and mechanical.",
+  "v.openai.sub":"StoryVoice's default voice. Breath, intention, real acting.",
+  "v.gemini.sub":"Another premium timbre, by Google. Warm and measured — compare to your taste.",
+  "vx.note":"Premium voices aren't free — that's why StoryVoice offers them pay-as-you-go, with no subscription. The browser voice stays available at no cost, always.",
+  "d.num":"No-account trial","d.ti":"The Demo","d.eyebrow":"Playable right now · no sign-up","d.h":"Try it on a public-domain classic.",
+  "d.li1":"Our demo loads <b>“A Scandal in Bohemia”</b> (Conan Doyle): five characters, five voices.",
+  "d.li2":"You watch the <b>living map</b> take shape and hear the <b>multi-voice narration</b>.",
+  "d.li3":"To read <b>your own</b> books, you'll just need voice credits.",
+  "d.launch":"Launch the demo","d.note":"Opens StoryVoice in a new tab.",
+  "t.num":"Voices, à la carte","t.ti":"The Box Office","t.lede":"The brain is free. You only pay for the voice — pay-as-you-go, never a subscription.",
+  "t1.name":"The Balcony Seat","t1.price":"€7.90","t1.hours":"≈ 3 h 20 of narration","t1.desc":"To taste the experience on a first book. 300,000 voice credits, valid for 12 months.",
+  "t2.tag":"Most chosen","t2.name":"The Orchestra","t2.price":"€24.90","t2.hours":"≈ 11 h of narration","t2.desc":"The sweet spot: enough to listen to several full novels. 1,000,000 credits, valid for 12 months.",
+  "t3.name":"The Private Box","t3.price":"€64.90","t3.hours":"≈ 33 h of narration","t3.desc":"For voracious readers. 3,000,000 credits, the best rate per hour, valid for 12 months.",
+  "t.buy":"Book my seat","t.free":"Reading with the map and summaries? <b>€0.</b> Always.",
+  "t.subnote":"Secure payment via LemonSqueezy. After purchase, your access code arrives by e-mail, with instructions.",
+  "f.num":"The Programme","f.ti":"Questions",
+  "q1.q":"In concrete terms, what does StoryVoice do?",
+  "q1.a":"You load an ebook. StoryVoice analyses it: it detects the characters, places and their relationships, writes summaries, and can narrate the text with a <b>different voice for each character</b>. All in a single web app (installable on desktop and mobile).",
+  "q2.q":"Are my personal ebooks private?",
+  "q2.a":"Yes. Your files stay in your browser and are never sent to our servers. Only the voices are synthesised remotely, from the text being read.",
+  "q3.q":"Is it free or paid?",
+  "q3.a":"Augmented reading — summaries, character map, spoiler-free Q&A — is <b>free</b>. Only premium voice narration is paid, via voice credits (no subscription).",
+  "q4.q":"I already bought a code — where do I paste it?",
+  "q4.a":"Open the app, then <code>⚙ Settings → Access code</code> and paste the code you received by e-mail (it starts with <code>sv_</code>). Any trouble? Write to quangapps.dev@gmail.com.",
+  "faq.cta":"✨ Try StoryVoice for free",
+  "foot.tagline":"Your books, performed like theatre.","foot.col1":"The app","foot.open":"Open the app","foot.how":"How it works","foot.tarifs":"Pricing","foot.col2":"Contact","foot.faq":"FAQ",
+  "foot.legal":"© 2026 StoryVoice — private reading tool. Demo: <i>A Scandal in Bohemia</i>, A. C. Doyle (public domain).",
+  "sticky.try":"✨ Try it free",
+  "aria.play":"Play","aria.listenBrowser":"Listen to the browser voice","aria.listenOpenai":"Listen to OpenAI","aria.listenGemini":"Listen to Gemini"
+ }
+};
+
+/* ============ EXTRAIT HÉROS + COMPARATEUR (bilingues) ============ */
 const HERO=[
- {who:"Sherlock Holmes",fr:"« Le mariage vous sied. Je crois, Watson, que vous avez pris sept livres et demie depuis que je vous ai vu. »",f:"c1_t2"},
- {who:"Dr Watson",fr:"« Sept ! Et de nouveau en clientèle, je vois. Mais comment le savez-vous ? »",f:"c1_t3"},
- {who:"Sherlock Holmes",fr:"« Je le vois, je le déduis. Un gentleman entre sentant l'iodoforme, une marque de nitrate d'argent sur l'index… »",f:"c1_t4"}
+ {who:{fr:"Sherlock Holmes",en:"Sherlock Holmes"},line:{fr:"« Le mariage vous sied. Je crois, Watson, que vous avez pris sept livres et demie depuis que je vous ai vu. »",en:"“Wedlock suits you. I think, Watson, that you have put on seven and a half pounds since I saw you.”"},f:"c1_t2"},
+ {who:{fr:"Dr Watson",en:"Dr. Watson"},line:{fr:"« Sept ! Et de nouveau en clientèle, je vois. Mais comment le savez-vous ? »",en:"“Seven! And in practice again, I see. But how do you know?”"},f:"c1_t3"},
+ {who:{fr:"Sherlock Holmes",en:"Sherlock Holmes"},line:{fr:"« Je le vois, je le déduis. Un gentleman entre sentant l'iodoforme, une marque de nitrate d'argent sur l'index… »",en:"“I see it, I deduce it. A gentleman walks in smelling of iodoform, with a black mark of nitrate of silver on his forefinger…”"},f:"c1_t4"}
 ];
+const CMP={
+ fr:{line:"« C'est une erreur capitale que de théoriser avant d'avoir des données. »",plain:"C'est une erreur capitale que de théoriser avant d'avoir des données.",voice:"fr"},
+ en:{line:"“It is a capital mistake to theorize before one has data.”",plain:"It is a capital mistake to theorize before one has data.",voice:"en"}
+};
+
+let LANG="fr";
 let mode=null,seqIdx=0;
-const exWho=document.getElementById("exWho"),exLine=document.getElementById("exLine"),extract=document.getElementById("extract");
+const exWho=document.getElementById("exWho"),exLine=document.getElementById("exLine"),extract=document.getElementById("extract"),cmpLine=document.getElementById("cmpLine");
+
+/* ============ APPLICATION DE LA LANGUE ============ */
+function applyLang(lang,save){
+  if(lang!=="fr"&&lang!=="en")lang="en";
+  LANG=lang;
+  try{if(save)localStorage.setItem("sv_landing_lang",lang);}catch(e){}
+  stopAll();
+  document.documentElement.lang=lang;
+  const D=I18N[lang];
+  // textes
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.getAttribute("data-i18n");if(D[k]!=null)el.innerHTML=D[k];});
+  document.querySelectorAll("[data-i18n-aria]").forEach(el=>{const k=el.getAttribute("data-i18n-aria");if(D[k]!=null)el.setAttribute("aria-label",D[k]);});
+  // métadonnées
+  document.title=D["doc.title"];
+  const set=(id,attr,val)=>{const e=document.getElementById(id);if(e)e.setAttribute(attr,val);};
+  set("metaDesc","content",D["meta.desc"]);
+  set("ogTitle","content",D["doc.title"]);set("ogDesc","content",D["og.desc"]);
+  set("twTitle","content",D["doc.title"]);set("twDesc","content",D["tw.desc"]);
+  set("ogLocale","content",lang==="fr"?"fr_FR":"en_US");
+  // comparateur (texte injecté en JS)
+  cmpLine.textContent=CMP[lang].line;
+  // bouton de langue actif
+  document.querySelectorAll(".langtog button").forEach(b=>b.classList.toggle("on",b.dataset.lang===lang));
+}
+
+/* ============ LECTURE AUDIO ============ */
 function stopAll(){au.pause();au.currentTime=0;mode=null;try{speechSynthesis.cancel();}catch(e){}document.querySelectorAll(".vcard").forEach(v=>v.classList.remove("playing"));}
 document.getElementById("extractBtn").addEventListener("click",()=>{
   extract.hidden=false;
@@ -384,20 +539,17 @@ document.getElementById("extractBtn").addEventListener("click",()=>{
 });
 document.getElementById("extractPlay").addEventListener("click",()=>{if(mode==="hero"){stopAll();}else{stopAll();mode="hero";seqIdx=0;heroTurn();}});
 function heroTurn(){
-  if(seqIdx>=HERO.length){stopAll();exWho.textContent="Et la scène continue…";return;}
-  const t=HERO[seqIdx];exWho.textContent=t.who;exLine.textContent=t.fr;
-  au.src=AUDIO_BASE+t.f+"_fr.mp3";au.play().catch(()=>{});
+  if(seqIdx>=HERO.length){stopAll();exWho.textContent=LANG==="fr"?"Et la scène continue…":"And the scene goes on…";return;}
+  const t=HERO[seqIdx];exWho.textContent=t.who[LANG];exLine.textContent=t.line[LANG];
+  au.src=AUDIO_BASE+t.f+"_"+LANG+".mp3";au.play().catch(()=>{});
 }
 
 /* --- comparateur de moteurs --- */
-const CMP_LINE="« C'est une erreur capitale que de théoriser avant d'avoir des données. »";
-const CMP_PLAIN="C'est une erreur capitale que de théoriser avant d'avoir des données.";
-document.getElementById("cmpLine").textContent=CMP_LINE;
 try{speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}catch(e){}
-function pickVoice(){const vs=(window.speechSynthesis&&speechSynthesis.getVoices())||[];return vs.find(v=>v.lang&&v.lang.toLowerCase().startsWith("fr"))||vs[0]||null;}
+function pickVoice(){const vs=(window.speechSynthesis&&speechSynthesis.getVoices())||[];return vs.find(v=>v.lang&&v.lang.toLowerCase().startsWith(LANG))||vs[0]||null;}
 function playNative(card){stopAll();card.classList.add("playing");mode="cmp";
-  try{const u=new SpeechSynthesisUtterance(CMP_PLAIN);const v=pickVoice();if(v){u.voice=v;u.lang=v.lang;}else u.lang="fr-FR";u.onend=()=>{card.classList.remove("playing");if(mode==="cmp")mode=null;};u.onerror=u.onend;speechSynthesis.speak(u);}catch(e){card.classList.remove("playing");}}
-function playCmp(engine,card){stopAll();card.classList.add("playing");mode="cmp";au.src="audio/cmp_"+engine+"_fr.mp3";au.play().catch(()=>{card.classList.remove("playing");});}
+  try{const u=new SpeechSynthesisUtterance(CMP[LANG].plain);const v=pickVoice();if(v){u.voice=v;u.lang=v.lang;}else u.lang=LANG==="fr"?"fr-FR":"en-US";u.onend=()=>{card.classList.remove("playing");if(mode==="cmp")mode=null;};u.onerror=u.onend;speechSynthesis.speak(u);}catch(e){card.classList.remove("playing");}}
+function playCmp(engine,card){stopAll();card.classList.add("playing");mode="cmp";au.src="audio/cmp_"+engine+"_"+LANG+".mp3";au.play().catch(()=>{card.classList.remove("playing");});}
 document.querySelectorAll(".vcard").forEach(card=>{
   const eng=card.dataset.engine;
   card.querySelector(".vbtn").addEventListener("click",()=>{if(card.classList.contains("playing")){stopAll();return;}if(eng==="browser")playNative(card);else playCmp(eng,card);});
@@ -407,6 +559,15 @@ au.addEventListener("ended",()=>{
   if(mode==="hero"){seqIdx++;heroTurn();}
   else if(mode==="cmp"){document.querySelectorAll(".vcard").forEach(v=>v.classList.remove("playing"));mode=null;}
 });
+
+/* ============ SÉLECTEUR DE LANGUE ============ */
+document.querySelectorAll(".langtog button").forEach(b=>b.addEventListener("click",()=>applyLang(b.dataset.lang,true)));
+function detectLang(){
+  try{const s=localStorage.getItem("sv_landing_lang");if(s==="fr"||s==="en")return s;}catch(e){}
+  const n=((navigator.languages&&navigator.languages[0])||navigator.language||navigator.userLanguage||"en").toLowerCase();
+  return n.indexOf("fr")===0?"fr":"en";
+}
+applyLang(detectLang(),false);
 
 /* --- soulignement héros + reveal --- */
 requestAnimationFrame(()=>setTimeout(()=>document.querySelector(".hero").classList.add("lit"),150));
@@ -423,7 +584,7 @@ window.addEventListener("scroll",updSticky,{passive:true});updSticky();
 
 /* --- compteur de visites (POST = incrémente) --- */
 try{fetch("https://api-gateway-pro.quang101182.workers.dev/api/visit?page=sv",{method:"POST",mode:"no-cors",keepalive:true}).catch(()=>{});}catch(e){}
-console.log("StoryVoice landing v"+VERSION);
+console.log("StoryVoice landing v"+VERSION+" — lang="+LANG);
 </script>
 </body>
 </html>
