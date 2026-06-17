@@ -1,0 +1,25 @@
+# robots.txt — StoryVoice (storiesvoice.org)
+User-agent: *
+Allow: /
+
+# Crawlers de recherche & citation IA (ChatGPT Search, Perplexity, Claude, Gemini, Copilot)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: GPTBot
+Allow: /
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://storiesvoice.org/sitemap.xml

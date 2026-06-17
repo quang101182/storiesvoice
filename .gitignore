@@ -1,0 +1,7 @@
+# QA / outils de dev — non publiés
+_qa_landing.py
+_gen_comparator.js
+_check.js
+_shot_*.png
+_shot_*.png.raw.png
+.qa-profile/
