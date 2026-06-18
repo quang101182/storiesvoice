@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- StoryVoice — landing storiesvoice.org — « Ex Libris » — v1.2.0 (bilingue FR/EN : détection auto navigateur + bouton switch persistant, textes + audio héros/comparateur suivent la langue) -->
+<!-- StoryVoice — landing storiesvoice.org — « Ex Libris » — v1.3.0 (bilingue FR/EN : détection auto navigateur + bouton switch persistant, textes + audio héros/comparateur suivent la langue) -->
 <html lang="fr">
 <head>
 <meta charset="utf-8">
@@ -300,8 +300,8 @@ footer a:hover{color:var(--blood)}
   <p class="vtest-line" id="cmpLine"></p>
   <div class="vtest" id="vtest">
     <div class="vcard" data-engine="browser"><div class="tier free" data-i18n="v.browser.tier">Gratuit · instantané</div><div class="eng serif" data-i18n="v.browser.eng">Votre navigateur</div><div class="sub" data-i18n="v.browser.sub">La voix intégrée à votre appareil. Sans coût, mais plate et mécanique.</div><button class="vbtn" data-i18n-aria="aria.listenBrowser" aria-label="Écouter le navigateur"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars">★<span style="opacity:.3">★★★</span></div></div>
-    <div class="vcard premium" data-engine="openai"><div class="tier prem">Premium</div><div class="eng serif">OpenAI</div><div class="sub" data-i18n="v.openai.sub">La voix par défaut de StoryVoice. Du souffle, de l'intention, un vrai jeu d'acteur.</div><button class="vbtn" data-i18n-aria="aria.listenOpenai" aria-label="Écouter OpenAI"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars"><b>★★★★</b><span style="opacity:.3">★</span></div></div>
-    <div class="vcard premium" data-engine="gemini"><div class="tier prem">Premium ✨</div><div class="eng serif">Gemini</div><div class="sub" data-i18n="v.gemini.sub">Un autre timbre premium, signé Google. Chaud, posé — à comparer selon votre goût.</div><button class="vbtn" data-i18n-aria="aria.listenGemini" aria-label="Écouter Gemini"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars"><b>★★★★</b><span style="opacity:.3">★</span></div></div>
+    <div class="vcard premium" data-engine="openai"><div class="tier prem">Premium</div><div class="eng serif">OpenAI</div><div class="sub" data-i18n="v.openai.sub">Voix premium alternative, plus économe en crédits (≈ 2× plus d'heures). Excellente aussi.</div><button class="vbtn" data-i18n-aria="aria.listenOpenai" aria-label="Écouter OpenAI"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars"><b>★★★★</b><span style="opacity:.3">★</span></div></div>
+    <div class="vcard premium" data-engine="gemini"><div class="tier prem">Premium ✨</div><div class="eng serif">Gemini</div><div class="sub" data-i18n="v.gemini.sub">La voix par défaut de StoryVoice : le timbre le plus riche, signé Google. Du souffle, de l'intention, un vrai jeu d'acteur.</div><button class="vbtn" data-i18n-aria="aria.listenGemini" aria-label="Écouter Gemini"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><div class="stars"><b>★★★★★</b></div></div>
   </div>
   <p class="vnote" data-i18n="vx.note">Les voix premium ne sont pas gratuites — c'est pourquoi StoryVoice les propose au comptant, sans abonnement. Le navigateur, lui, reste toujours disponible sans payer.</p>
 </div></section>
@@ -335,9 +335,9 @@ footer a:hover{color:var(--blood)}
 <section><div class="wrap reveal">
   <p class="section-lede" data-i18n="t.lede">Le cerveau est gratuit. Vous ne payez que la voix — au comptant, jamais d'abonnement.</p>
   <div class="tickets">
-    <div class="ticket"><div class="name serif" data-i18n="t1.name">La Place au Balcon</div><div class="price" data-i18n="t1.price">7,90 €</div><div class="hours" data-i18n="t1.hours">≈ 3 h 20 de narration</div><div class="desc" data-i18n="t1.desc">Pour goûter l'expérience sur un premier livre. 300 000 crédits de voix, valables 12 mois.</div><a class="btn ghost" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/832792f9-c1f3-4e0f-bd09-8b5bdde22a2d" href="#" data-i18n="t.buy">Prendre ma place</a></div>
-    <div class="ticket feature"><span class="tag" data-i18n="t2.tag">Le plus choisi</span><div class="name serif" data-i18n="t2.name">L'Orchestre</div><div class="price" data-i18n="t2.price">24,90 €</div><div class="hours" data-i18n="t2.hours">≈ 11 h de narration</div><div class="desc" data-i18n="t2.desc">Le bon équilibre : de quoi écouter plusieurs romans en entier. 1 000 000 de crédits, valables 12 mois.</div><a class="btn primary" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/ec19abce-6abe-4fd4-a6d4-c2be0694aa99" href="#" data-i18n="t.buy">Prendre ma place</a></div>
-    <div class="ticket"><div class="name serif" data-i18n="t3.name">La Loge</div><div class="price" data-i18n="t3.price">64,90 €</div><div class="hours" data-i18n="t3.hours">≈ 33 h de narration</div><div class="desc" data-i18n="t3.desc">Pour les grands lecteurs. 3 000 000 de crédits, le meilleur tarif à l'heure, valables 12 mois.</div><a class="btn ghost" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/abd00154-2da2-4f69-8044-2f4b46723de6" href="#" data-i18n="t.buy">Prendre ma place</a></div>
+    <div class="ticket"><div class="name serif" data-i18n="t1.name">La Place au Balcon</div><div class="price" data-i18n="t1.price">7,90 €</div><div class="hours" data-i18n="t1.hours">≈ 1 h 40 (Gemini) à 3 h 20 (OpenAI)</div><div class="desc" data-i18n="t1.desc">Pour goûter l'expérience sur un premier livre. 300 000 crédits de voix, valables 12 mois.</div><a class="btn ghost" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/832792f9-c1f3-4e0f-bd09-8b5bdde22a2d" href="#" data-i18n="t.buy">Prendre ma place</a></div>
+    <div class="ticket feature"><span class="tag" data-i18n="t2.tag">Le plus choisi</span><div class="name serif" data-i18n="t2.name">L'Orchestre</div><div class="price" data-i18n="t2.price">24,90 €</div><div class="hours" data-i18n="t2.hours">≈ 5 h 30 (Gemini) à 11 h (OpenAI)</div><div class="desc" data-i18n="t2.desc">Le bon équilibre : de quoi écouter plusieurs romans en entier. 1 000 000 de crédits, valables 12 mois.</div><a class="btn primary" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/ec19abce-6abe-4fd4-a6d4-c2be0694aa99" href="#" data-i18n="t.buy">Prendre ma place</a></div>
+    <div class="ticket"><div class="name serif" data-i18n="t3.name">La Loge</div><div class="price" data-i18n="t3.price">64,90 €</div><div class="hours" data-i18n="t3.hours">≈ 16 h 30 (Gemini) à 33 h (OpenAI)</div><div class="desc" data-i18n="t3.desc">Pour les grands lecteurs. 3 000 000 de crédits, le meilleur tarif à l'heure, valables 12 mois.</div><a class="btn ghost" data-buy="https://se7en-tools.lemonsqueezy.com/checkout/buy/abd00154-2da2-4f69-8044-2f4b46723de6" href="#" data-i18n="t.buy">Prendre ma place</a></div>
   </div>
   <p class="note-free" data-i18n="t.free">Lire avec la carte et les résumés ? <b>0 €.</b> Toujours.</p>
   <p class="subnote" data-i18n="t.subnote">Paiement sécurisé par LemonSqueezy. Après l'achat, votre code d'accès arrive par e-mail, avec les instructions.</p>
@@ -366,7 +366,7 @@ footer a:hover{color:var(--blood)}
     <div class="col"><h5 data-i18n="foot.col1">L'application</h5><a href="https://quang101182.github.io/storyvoice/" target="_blank" rel="noopener" data-i18n="foot.open">Ouvrir l'app</a><a href="#how" data-i18n="foot.how">Comment ça marche</a><a href="#tarifs" data-i18n="foot.tarifs">Tarifs</a></div>
     <div class="col"><h5 data-i18n="foot.col2">Contact</h5><a href="mailto:quangapps.dev@gmail.com">quangapps.dev@gmail.com</a><a href="#faq" data-i18n="foot.faq">Questions fréquentes</a></div>
   </div>
-  <div class="wrap legal"><span data-i18n="foot.legal">© 2026 StoryVoice — outil de lecture privée. Démo : <i>A Scandal in Bohemia</i>, A. C. Doyle (domaine public).</span><span>v1.2.0</span></div>
+  <div class="wrap legal"><span data-i18n="foot.legal">© 2026 StoryVoice — outil de lecture privée. Démo : <i>A Scandal in Bohemia</i>, A. C. Doyle (domaine public).</span><span>v1.3.0</span></div>
 </footer>
 
 <!-- CTA sticky mobile -->
@@ -377,7 +377,7 @@ footer a:hover{color:var(--blood)}
 <audio id="au" preload="none"></audio>
 
 <script>
-const VERSION="1.2.0";
+const VERSION="1.3.0";
 const AUDIO_BASE="https://quang101182.github.io/storyvoice/demo/audio/";
 const au=document.getElementById("au");
 
@@ -407,8 +407,8 @@ const I18N={
   "ap.cta":"✨ Essayer maintenant — gratuit",
   "vx.num":"La qualité des voix","vx.ti":"L'Épreuve des Voix","vx.lede":"La même réplique, trois moteurs. À vous de juger — l'oreille décide.",
   "v.browser.tier":"Gratuit · instantané","v.browser.eng":"Votre navigateur","v.browser.sub":"La voix intégrée à votre appareil. Sans coût, mais plate et mécanique.",
-  "v.openai.sub":"La voix par défaut de StoryVoice. Du souffle, de l'intention, un vrai jeu d'acteur.",
-  "v.gemini.sub":"Un autre timbre premium, signé Google. Chaud, posé — à comparer selon votre goût.",
+  "v.openai.sub":"Voix premium alternative, plus économe en crédits (≈ 2× plus d'heures). Excellente aussi.",
+  "v.gemini.sub":"La voix par défaut de StoryVoice : le timbre le plus riche, signé Google. Du souffle, de l'intention, un vrai jeu d'acteur.",
   "vx.note":"Les voix premium ne sont pas gratuites — c'est pourquoi StoryVoice les propose au comptant, sans abonnement. Le navigateur, lui, reste toujours disponible sans payer.",
   "d.num":"Essai sans compte","d.ti":"La Démo","d.eyebrow":"Jouable tout de suite · sans inscription","d.h":"Essayez sur un classique du domaine public.",
   "d.li1":"Notre démo charge <b>« Un scandale en Bohême »</b> (Conan Doyle) : cinq personnages, cinq voix.",
@@ -416,9 +416,9 @@ const I18N={
   "d.li3":"Pour lire <b>vos</b> livres, il suffira ensuite de crédits de voix.",
   "d.launch":"Lancer la démo","d.note":"Ouvre StoryVoice dans un nouvel onglet.",
   "t.num":"Les voix, à la carte","t.ti":"La Billetterie","t.lede":"Le cerveau est gratuit. Vous ne payez que la voix — au comptant, jamais d'abonnement.",
-  "t1.name":"La Place au Balcon","t1.price":"7,90 €","t1.hours":"≈ 3 h 20 de narration","t1.desc":"Pour goûter l'expérience sur un premier livre. 300 000 crédits de voix, valables 12 mois.",
-  "t2.tag":"Le plus choisi","t2.name":"L'Orchestre","t2.price":"24,90 €","t2.hours":"≈ 11 h de narration","t2.desc":"Le bon équilibre : de quoi écouter plusieurs romans en entier. 1 000 000 de crédits, valables 12 mois.",
-  "t3.name":"La Loge","t3.price":"64,90 €","t3.hours":"≈ 33 h de narration","t3.desc":"Pour les grands lecteurs. 3 000 000 de crédits, le meilleur tarif à l'heure, valables 12 mois.",
+  "t1.name":"La Place au Balcon","t1.price":"7,90 €","t1.hours":"≈ 1 h 40 (Gemini) à 3 h 20 (OpenAI)","t1.desc":"Pour goûter l'expérience sur un premier livre. 300 000 crédits de voix, valables 12 mois.",
+  "t2.tag":"Le plus choisi","t2.name":"L'Orchestre","t2.price":"24,90 €","t2.hours":"≈ 5 h 30 (Gemini) à 11 h (OpenAI)","t2.desc":"Le bon équilibre : de quoi écouter plusieurs romans en entier. 1 000 000 de crédits, valables 12 mois.",
+  "t3.name":"La Loge","t3.price":"64,90 €","t3.hours":"≈ 16 h 30 (Gemini) à 33 h (OpenAI)","t3.desc":"Pour les grands lecteurs. 3 000 000 de crédits, le meilleur tarif à l'heure, valables 12 mois.",
   "t.buy":"Prendre ma place","t.free":"Lire avec la carte et les résumés ? <b>0 €.</b> Toujours.",
   "t.subnote":"Paiement sécurisé par LemonSqueezy. Après l'achat, votre code d'accès arrive par e-mail, avec les instructions.",
   "f.num":"Le Programme","f.ti":"Questions",
@@ -460,8 +460,8 @@ const I18N={
   "ap.cta":"✨ Try it now — free",
   "vx.num":"Voice quality","vx.ti":"The Trial of Voices","vx.lede":"The same line, three engines. You be the judge — the ear decides.",
   "v.browser.tier":"Free · instant","v.browser.eng":"Your browser","v.browser.sub":"The voice built into your device. Free, but flat and mechanical.",
-  "v.openai.sub":"StoryVoice's default voice. Breath, intention, real acting.",
-  "v.gemini.sub":"Another premium timbre, by Google. Warm and measured — compare to your taste.",
+  "v.openai.sub":"Alternative premium voice, lighter on credits (≈ 2× more hours). Excellent too.",
+  "v.gemini.sub":"StoryVoice's default voice: the richest timbre, by Google. Breath, intention, real acting.",
   "vx.note":"Premium voices aren't free — that's why StoryVoice offers them pay-as-you-go, with no subscription. The browser voice stays available at no cost, always.",
   "d.num":"No-account trial","d.ti":"The Demo","d.eyebrow":"Playable right now · no sign-up","d.h":"Try it on a public-domain classic.",
   "d.li1":"Our demo loads <b>“A Scandal in Bohemia”</b> (Conan Doyle): five characters, five voices.",
@@ -469,9 +469,9 @@ const I18N={
   "d.li3":"To read <b>your own</b> books, you'll just need voice credits.",
   "d.launch":"Launch the demo","d.note":"Opens StoryVoice in a new tab.",
   "t.num":"Voices, à la carte","t.ti":"The Box Office","t.lede":"The brain is free. You only pay for the voice — pay-as-you-go, never a subscription.",
-  "t1.name":"The Balcony Seat","t1.price":"€7.90","t1.hours":"≈ 3 h 20 of narration","t1.desc":"To taste the experience on a first book. 300,000 voice credits, valid for 12 months.",
-  "t2.tag":"Most chosen","t2.name":"The Orchestra","t2.price":"€24.90","t2.hours":"≈ 11 h of narration","t2.desc":"The sweet spot: enough to listen to several full novels. 1,000,000 credits, valid for 12 months.",
-  "t3.name":"The Private Box","t3.price":"€64.90","t3.hours":"≈ 33 h of narration","t3.desc":"For voracious readers. 3,000,000 credits, the best rate per hour, valid for 12 months.",
+  "t1.name":"The Balcony Seat","t1.price":"€7.90","t1.hours":"≈ 1 h 40 (Gemini) to 3 h 20 (OpenAI)","t1.desc":"To taste the experience on a first book. 300,000 voice credits, valid for 12 months.",
+  "t2.tag":"Most chosen","t2.name":"The Orchestra","t2.price":"€24.90","t2.hours":"≈ 5 h 30 (Gemini) to 11 h (OpenAI)","t2.desc":"The sweet spot: enough to listen to several full novels. 1,000,000 credits, valid for 12 months.",
+  "t3.name":"The Private Box","t3.price":"€64.90","t3.hours":"≈ 16 h 30 (Gemini) to 33 h (OpenAI)","t3.desc":"For voracious readers. 3,000,000 credits, the best rate per hour, valid for 12 months.",
   "t.buy":"Book my seat","t.free":"Reading with the map and summaries? <b>€0.</b> Always.",
   "t.subnote":"Secure payment via LemonSqueezy. After purchase, your access code arrives by e-mail, with instructions.",
   "f.num":"The Programme","f.ti":"Questions",
